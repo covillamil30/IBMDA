@@ -40,7 +40,7 @@
           </children>
           <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_oRyLAaq-Eeeccq3FHV37HA" sortingKeys="Natural:Ascending"/>
           <styles xsi:type="datanotation:TableStyle" xmi:id="_oRyLA6q-Eeeccq3FHV37HA" fontName="Segoe UI" lineWidth="1"/>
-          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_oRyLAqq-Eeeccq3FHV37HA" x="3407" y="2307"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_oRyLAqq-Eeeccq3FHV37HA" x="3471" y="7112"/>
         </children>
         <children xmi:id="_otpnoKq-Eeeccq3FHV37HA" element="_L5h8AKq-Eeeccq3FHV37HA">
           <children xsi:type="notation:Shape" xmi:id="_otpnpKq-Eeeccq3FHV37HA" type="IEEntityName" fontName="Segoe UI">
@@ -113,7 +113,7 @@
             <layoutConstraint xsi:type="notation:Location" xmi:id="_qzw_pKq-Eeeccq3FHV37HA" x="-212" y="529"/>
           </children>
           <styles xsi:type="datanotation:DataLineStyle" xmi:id="_qzw_kaq-Eeeccq3FHV37HA" fontName="Segoe UI" routing="Rectilinear" lineWidth="1"/>
-          <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_qzw_kqq-Eeeccq3FHV37HA" points="[1705, -268, -11684, 260]$[11167, -268, -2222, 260]"/>
+          <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_qzw_kqq-Eeeccq3FHV37HA" points="[1705, -247, -11620, 5086]$[6362, -247, -6963, 5086]$[6362, -5073, -6963, 260]$[11082, -5073, -2243, 260]"/>
         </edges>
       </contents>
     </eAnnotations>
