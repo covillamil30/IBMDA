@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/data/1.9.0.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DerbyModel="http:///org/eclipse/datatools/modelbase/derby/derby.ecore" xmlns:SQLConstraints="http:///org/eclipse/datatools/modelbase/sql/constraints.ecore" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore" xmlns:SQLExpressions="http:///org/eclipse/datatools/modelbase/sql/expressions.ecore" xmlns:SQLSchema="http:///org/eclipse/datatools/modelbase/sql/schema.ecore" xmlns:SQLTables="http:///org/eclipse/datatools/modelbase/sql/tables.ecore">
+  <SQLSchema:Database xmi:id="_8_ZbUKcVEee7SLkm8_BSqg" name="SAMPLE" vendor="Derby" version="10.1" schemas="_9G5xgKcVEee7SLkm8_BSqg" catalogs="_9G_REKcVEee7SLkm8_BSqg">
+    <eAnnotations xmi:id="_8_ZbUacVEee7SLkm8_BSqg" source="ConnectionURI">
+      <details xmi:id="_8_ZbUqcVEee7SLkm8_BSqg" key="ConnectionKey" value="Derby Sample Connection"/>
+    </eAnnotations>
+  </SQLSchema:Database>
+  <DerbyModel:DerbySchema xmi:id="_9G5xgKcVEee7SLkm8_BSqg" name="STUDENT_LIFE" indices="_9G5xgacVEee7SLkm8_BSqg _9G6YkKcVEee7SLkm8_BSqg _9G9b4KcVEee7SLkm8_BSqg _9G-C8KcVEee7SLkm8_BSqg _9G-C8qcVEee7SLkm8_BSqg _9G-qAKcVEee7SLkm8_BSqg _9G-qAqcVEee7SLkm8_BSqg _xbs9cKi8EeeeTOFPRsVJWA" tables="_9G5xhKcVEee7SLkm8_BSqg _9G7msKcVEee7SLkm8_BSqg _9G8NwKcVEee7SLkm8_BSqg _9G6_oKcVEee7SLkm8_BSqg" database="_8_ZbUKcVEee7SLkm8_BSqg" Catalog="_9G_REKcVEee7SLkm8_BSqg"/>
+  <SQLConstraints:Index xmi:id="_9G5xgacVEee7SLkm8_BSqg" name="SQL171001054612510" Schema="_9G5xgKcVEee7SLkm8_BSqg" unique="true" table="_9G5xhKcVEee7SLkm8_BSqg">
+    <members xmi:id="_9G5xgqcVEee7SLkm8_BSqg" column="_9G5xhacVEee7SLkm8_BSqg"/>
+    <members xmi:id="_9G5xg6cVEee7SLkm8_BSqg" column="_9G5xh6cVEee7SLkm8_BSqg"/>
+  </SQLConstraints:Index>
+  <SQLTables:PersistentTable xmi:id="_9G5xhKcVEee7SLkm8_BSqg" name="ACTIVITY" schema="_9G5xgKcVEee7SLkm8_BSqg" index="_9G5xgacVEee7SLkm8_BSqg _9G6YkKcVEee7SLkm8_BSqg">
+    <columns xmi:id="_9G5xhacVEee7SLkm8_BSqg" name="STUDENT_ID" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G5xhqcVEee7SLkm8_BSqg" name="CHAR" length="10"/>
+    </columns>
+    <columns xmi:id="_9G5xh6cVEee7SLkm8_BSqg" name="ACTIVITY_ID" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G5xiKcVEee7SLkm8_BSqg" name="CHAR" length="5"/>
+    </columns>
+    <columns xmi:id="_9G5xiacVEee7SLkm8_BSqg" name="JOIN_DATE" description="">
+      <containedType xsi:type="SQLDataTypes:DateDataType" xmi:id="_9G5xiqcVEee7SLkm8_BSqg" name="DATE" primitiveType="DATE"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_9G5xi6cVEee7SLkm8_BSqg" name="ACTIVITY_PK" members="_9G5xhacVEee7SLkm8_BSqg _9G5xh6cVEee7SLkm8_BSqg"/>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_9G5xjKcVEee7SLkm8_BSqg" name="ACTIVITY_STUDENT_FK" members="_9G5xhacVEee7SLkm8_BSqg" uniqueConstraint="_9G6_r6cVEee7SLkm8_BSqg">
+      <eAnnotations xmi:id="_9G5xjacVEee7SLkm8_BSqg" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_9G5xjqcVEee7SLkm8_BSqg" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_9G5xj6cVEee7SLkm8_BSqg" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_9G5xkKcVEee7SLkm8_BSqg" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_9G5xkacVEee7SLkm8_BSqg" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_9G5xkqcVEee7SLkm8_BSqg" key="FK_PARENT_ROLE_NAME" value=""/>
+        <details xmi:id="_9G5xk6cVEee7SLkm8_BSqg" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_9G5xlKcVEee7SLkm8_BSqg" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_9G5xlacVEee7SLkm8_BSqg" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_9G5xlqcVEee7SLkm8_BSqg" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_9G5xl6cVEee7SLkm8_BSqg" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+  </SQLTables:PersistentTable>
+  <SQLConstraints:Index xmi:id="_9G6YkKcVEee7SLkm8_BSqg" name="SQL171001054701950" Schema="_9G5xgKcVEee7SLkm8_BSqg" table="_9G5xhKcVEee7SLkm8_BSqg">
+    <members xmi:id="_9G6YkacVEee7SLkm8_BSqg" column="_9G5xhacVEee7SLkm8_BSqg"/>
+  </SQLConstraints:Index>
+  <SQLTables:PersistentTable xmi:id="_9G6_oKcVEee7SLkm8_BSqg" name="STUDENT" schema="_9G5xgKcVEee7SLkm8_BSqg" index="_9G-qAqcVEee7SLkm8_BSqg _xbs9cKi8EeeeTOFPRsVJWA">
+    <columns xmi:id="_9G6_oacVEee7SLkm8_BSqg" name="FIRST_NAME" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G6_oqcVEee7SLkm8_BSqg" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="20"/>
+    </columns>
+    <columns xmi:id="_9G6_o6cVEee7SLkm8_BSqg" name="LAST_NAME" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G6_pKcVEee7SLkm8_BSqg" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="128"/>
+    </columns>
+    <columns xmi:id="_9G6_pacVEee7SLkm8_BSqg" name="STUDENT_ID" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G6_pqcVEee7SLkm8_BSqg" name="CHAR" length="10"/>
+    </columns>
+    <columns xmi:id="_9G6_p6cVEee7SLkm8_BSqg" name="STUDENT_SSN" description="">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G6_qKcVEee7SLkm8_BSqg" name="CHAR" length="11"/>
+    </columns>
+    <columns xmi:id="_9G6_qacVEee7SLkm8_BSqg" name="EMAIL_ADD" description="">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G6_qqcVEee7SLkm8_BSqg" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="128"/>
+    </columns>
+    <columns xmi:id="_9G6_q6cVEee7SLkm8_BSqg" name="START_DATE" description="">
+      <containedType xsi:type="SQLDataTypes:DateDataType" xmi:id="_9G6_rKcVEee7SLkm8_BSqg" name="DATE" primitiveType="DATE"/>
+    </columns>
+    <columns xmi:id="_9G6_racVEee7SLkm8_BSqg" name="GRADUATION_DATE" description="">
+      <containedType xsi:type="SQLDataTypes:DateDataType" xmi:id="_9G6_rqcVEee7SLkm8_BSqg" name="DATE" primitiveType="DATE"/>
+    </columns>
+    <columns xmi:id="_rW0p4Ki8EeeeTOFPRsVJWA" name="STUDENT_PHONE">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_rW0p4ai8EeeeTOFPRsVJWA" name="CHAR" length="30"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_9G6_r6cVEee7SLkm8_BSqg" name="STUDENT_PK" members="_9G6_pacVEee7SLkm8_BSqg" ForeignKey="_9G5xjKcVEee7SLkm8_BSqg _9G7mvqcVEee7SLkm8_BSqg _9G8016cVEee7SLkm8_BSqg"/>
+    <constraints xsi:type="SQLConstraints:CheckConstraint" xmi:id="_9G6_sKcVEee7SLkm8_BSqg" name="STUDENT_START_DATE_CK">
+      <searchCondition xsi:type="SQLExpressions:SearchConditionDefault" xmi:id="_9G6_sacVEee7SLkm8_BSqg" SQL="(GRADUATION_DATE > START_DATE)"/>
+    </constraints>
+  </SQLTables:PersistentTable>
+  <SQLTables:PersistentTable xmi:id="_9G7msKcVEee7SLkm8_BSqg" name="COURSE" schema="_9G5xgKcVEee7SLkm8_BSqg" index="_9G9b4KcVEee7SLkm8_BSqg _9G-C8KcVEee7SLkm8_BSqg">
+    <columns xmi:id="_9G7msacVEee7SLkm8_BSqg" name="DEPT_ID" description="">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G7msqcVEee7SLkm8_BSqg" name="CHAR" length="4"/>
+    </columns>
+    <columns xmi:id="_9G7ms6cVEee7SLkm8_BSqg" name="INSTRUCTOR_ID" description="">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G7mtKcVEee7SLkm8_BSqg" name="CHAR" length="5"/>
+    </columns>
+    <columns xmi:id="_9G7mtacVEee7SLkm8_BSqg" name="INSTRUCTOR_NAME" description="">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G7mtqcVEee7SLkm8_BSqg" name="VARCHAR" primitiveType="CHARACTER_VARYING" length="20"/>
+    </columns>
+    <columns xmi:id="_9G7mt6cVEee7SLkm8_BSqg" name="STUDENT_TOTAL" description="">
+      <containedType xsi:type="SQLDataTypes:IntegerDataType" xmi:id="_9G7muKcVEee7SLkm8_BSqg" name="INTEGER" primitiveType="INTEGER"/>
+    </columns>
+    <columns xmi:id="_9G7muacVEee7SLkm8_BSqg" name="COURSE_ID" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G7muqcVEee7SLkm8_BSqg" name="CHAR" length="5"/>
+    </columns>
+    <columns xmi:id="_9G7mu6cVEee7SLkm8_BSqg" name="STUDENT_ID" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G7mvKcVEee7SLkm8_BSqg" name="CHAR" length="10"/>
+    </columns>
+    <columns xmi:id="_iiP14Ki8EeeeTOFPRsVJWA" name="INSTRUCTOR_PHONE">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_iiP14ai8EeeeTOFPRsVJWA" name="CHAR" length="30"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_9G7mvacVEee7SLkm8_BSqg" name="COURSE_PK" members="_9G7muacVEee7SLkm8_BSqg"/>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_9G7mvqcVEee7SLkm8_BSqg" name="COURSE_STUDENT_FK" members="_9G7mu6cVEee7SLkm8_BSqg" uniqueConstraint="_9G6_r6cVEee7SLkm8_BSqg">
+      <eAnnotations xmi:id="_9G7mv6cVEee7SLkm8_BSqg" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_9G7mwKcVEee7SLkm8_BSqg" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="false"/>
+        <details xmi:id="_9G7mwacVEee7SLkm8_BSqg" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_9G7mwqcVEee7SLkm8_BSqg" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_9G7mw6cVEee7SLkm8_BSqg" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_9G7mxKcVEee7SLkm8_BSqg" key="FK_PARENT_ROLE_NAME" value=""/>
+        <details xmi:id="_9G7mxacVEee7SLkm8_BSqg" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="false"/>
+        <details xmi:id="_9G7mxqcVEee7SLkm8_BSqg" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_9G7mx6cVEee7SLkm8_BSqg" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_9G7myKcVEee7SLkm8_BSqg" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_9G7myacVEee7SLkm8_BSqg" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+  </SQLTables:PersistentTable>
+  <SQLTables:PersistentTable xmi:id="_9G8NwKcVEee7SLkm8_BSqg" name="GRADE" schema="_9G5xgKcVEee7SLkm8_BSqg" index="_9G-C8qcVEee7SLkm8_BSqg _9G-qAKcVEee7SLkm8_BSqg">
+    <columns xmi:id="_9G8NwacVEee7SLkm8_BSqg" name="STUDENT_ID" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G8NwqcVEee7SLkm8_BSqg" name="CHAR" length="10"/>
+    </columns>
+    <columns xmi:id="_9G8Nw6cVEee7SLkm8_BSqg" name="COURSE_ID" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G8NxKcVEee7SLkm8_BSqg" name="CHAR" length="8"/>
+    </columns>
+    <columns xmi:id="_9G800KcVEee7SLkm8_BSqg" name="SCORE_PASS_FAIL" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G800acVEee7SLkm8_BSqg" name="CHAR"/>
+    </columns>
+    <columns xmi:id="_9G800qcVEee7SLkm8_BSqg" name="SCORE_TOTAL" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_9G8006cVEee7SLkm8_BSqg" name="DECIMAL" primitiveType="DECIMAL" precision="3"/>
+    </columns>
+    <columns xmi:id="_9G801KcVEee7SLkm8_BSqg" name="ATTRIBUTE1" description="" nullable="false">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_9G801acVEee7SLkm8_BSqg" name="CHAR" length="5"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_9G801qcVEee7SLkm8_BSqg" name="GRADE_PK" members="_9G8Nw6cVEee7SLkm8_BSqg _9G8NwacVEee7SLkm8_BSqg _9G801KcVEee7SLkm8_BSqg"/>
+    <constraints xsi:type="SQLConstraints:ForeignKey" xmi:id="_9G8016cVEee7SLkm8_BSqg" name="GRADE_STUDENT_FK" members="_9G8NwacVEee7SLkm8_BSqg" uniqueConstraint="_9G6_r6cVEee7SLkm8_BSqg">
+      <eAnnotations xmi:id="_9G802KcVEee7SLkm8_BSqg" source="FK_MODELING_RELATIONSHIP">
+        <details xmi:id="_9G802acVEee7SLkm8_BSqg" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_9G802qcVEee7SLkm8_BSqg" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_9G8026cVEee7SLkm8_BSqg" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_9G803KcVEee7SLkm8_BSqg" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_9G803acVEee7SLkm8_BSqg" key="FK_PARENT_ROLE_NAME" value=""/>
+        <details xmi:id="_9G803qcVEee7SLkm8_BSqg" key="FK_IS_IDENTIFYING_RELATIONSHIP" value="true"/>
+        <details xmi:id="_9G8036cVEee7SLkm8_BSqg" key="FK_CHILD_MULTIPLICITY" value="*"/>
+        <details xmi:id="_9G804KcVEee7SLkm8_BSqg" key="FK_CHILD_ROLE_NAME" value=""/>
+        <details xmi:id="_9G804acVEee7SLkm8_BSqg" key="FK_PARENT_MULTIPLICITY" value="0..1"/>
+        <details xmi:id="_9G804qcVEee7SLkm8_BSqg" key="FK_PARENT_ROLE_NAME" value=""/>
+      </eAnnotations>
+    </constraints>
+  </SQLTables:PersistentTable>
+  <SQLConstraints:Index xmi:id="_9G9b4KcVEee7SLkm8_BSqg" name="SQL171001054700210" Schema="_9G5xgKcVEee7SLkm8_BSqg" unique="true" table="_9G7msKcVEee7SLkm8_BSqg">
+    <members xmi:id="_9G9b4acVEee7SLkm8_BSqg" column="_9G7muacVEee7SLkm8_BSqg"/>
+  </SQLConstraints:Index>
+  <SQLConstraints:Index xmi:id="_9G-C8KcVEee7SLkm8_BSqg" name="SQL171001054702320" Schema="_9G5xgKcVEee7SLkm8_BSqg" table="_9G7msKcVEee7SLkm8_BSqg">
+    <members xmi:id="_9G-C8acVEee7SLkm8_BSqg" column="_9G7mu6cVEee7SLkm8_BSqg"/>
+  </SQLConstraints:Index>
+  <SQLConstraints:Index xmi:id="_9G-C8qcVEee7SLkm8_BSqg" name="SQL171001054700680" Schema="_9G5xgKcVEee7SLkm8_BSqg" unique="true" table="_9G8NwKcVEee7SLkm8_BSqg">
+    <members xmi:id="_9G-C86cVEee7SLkm8_BSqg" column="_9G8Nw6cVEee7SLkm8_BSqg"/>
+    <members xmi:id="_9G-C9KcVEee7SLkm8_BSqg" column="_9G8NwacVEee7SLkm8_BSqg"/>
+    <members xmi:id="_9G-C9acVEee7SLkm8_BSqg" column="_9G801KcVEee7SLkm8_BSqg"/>
+  </SQLConstraints:Index>
+  <SQLConstraints:Index xmi:id="_9G-qAKcVEee7SLkm8_BSqg" name="SQL171001054704740" Schema="_9G5xgKcVEee7SLkm8_BSqg" table="_9G8NwKcVEee7SLkm8_BSqg">
+    <members xmi:id="_9G-qAacVEee7SLkm8_BSqg" column="_9G8NwacVEee7SLkm8_BSqg"/>
+  </SQLConstraints:Index>
+  <SQLConstraints:Index xmi:id="_9G-qAqcVEee7SLkm8_BSqg" name="SQL171001054701140" Schema="_9G5xgKcVEee7SLkm8_BSqg" unique="true" table="_9G6_oKcVEee7SLkm8_BSqg">
+    <members xmi:id="_9G-qA6cVEee7SLkm8_BSqg" column="_9G6_pacVEee7SLkm8_BSqg"/>
+  </SQLConstraints:Index>
+  <SQLSchema:Catalog xmi:id="_9G_REKcVEee7SLkm8_BSqg" name="" Database="_8_ZbUKcVEee7SLkm8_BSqg" schemas="_9G5xgKcVEee7SLkm8_BSqg"/>
+  <SQLConstraints:Index xmi:id="_xbs9cKi8EeeeTOFPRsVJWA" name="STUDENT_FIRST_NAME_IDX" Schema="_9G5xgKcVEee7SLkm8_BSqg" table="_9G6_oKcVEee7SLkm8_BSqg">
+    <members xmi:id="_xctDAKi8EeeeTOFPRsVJWA" column="_9G6_oacVEee7SLkm8_BSqg"/>
+    <members xmi:id="_y_57IKi8EeeeTOFPRsVJWA" column="_9G6_o6cVEee7SLkm8_BSqg"/>
+  </SQLConstraints:Index>
+</xmi:XMI>

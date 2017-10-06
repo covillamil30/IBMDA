@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/data/1.9.0.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:NamingModel="http:///com/ibm/db/models/naming/naming.ecore">
+  <NamingModel:NamingStandard xmi:id="_-1pkUKU-Eee7SLkm8_BSqg" name="STUDENT_GLOSSARY_ROOT" glossaries="_-1pkUaU-Eee7SLkm8_BSqg"/>
+  <NamingModel:Glossary xmi:id="_-1pkUaU-Eee7SLkm8_BSqg" name="STUDENT_GLOSSARY" namingStandard="_-1pkUKU-Eee7SLkm8_BSqg">
+    <words xmi:id="_kQ0lUKU_Eee7SLkm8_BSqg" name="ID Number" abbreviation="ID" classification="PRIME"/>
+    <words xmi:id="_0uw-cKU_Eee7SLkm8_BSqg" name="Address" abbreviation="ADD" classification="PRIME"/>
+    <words xmi:id="_6B0zgKU_Eee7SLkm8_BSqg" name="Date" abbreviation="DATE" classification="PRIME"/>
+    <words xmi:id="__QXU8KU_Eee7SLkm8_BSqg" name="Department" abbreviation="DEPT" classification="PRIME"/>
+    <words xmi:id="_DEnpsKVAEee7SLkm8_BSqg" name="Name" abbreviation="NAME or NM" classification="PRIME"/>
+    <words xmi:id="_H4foYKVAEee7SLkm8_BSqg" name="Pass/Fail" abbreviation="PASSFAIL" classification="PRIME"/>
+    <words xmi:id="_Nan0MKVAEee7SLkm8_BSqg" name="Social secutity number" abbreviation="SSN" classification="PRIME"/>
+    <words xmi:id="_SHLp8KVAEee7SLkm8_BSqg" name="Total number" abbreviation="TOTAL" classification="PRIME"/>
+    <words xmi:id="_pZ9M4KVAEee7SLkm8_BSqg" name="Course" abbreviation="COURSE" classification="CLASS"/>
+    <words xmi:id="_tkWJsKVAEee7SLkm8_BSqg" name="Email" abbreviation="EMAIL" classification="CLASS"/>
+  </NamingModel:Glossary>
+</xmi:XMI>

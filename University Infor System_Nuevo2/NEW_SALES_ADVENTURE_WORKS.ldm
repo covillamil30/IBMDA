@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/data/1.9.0.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:LogicalDataModel="http:///com/ibm/db/models/logical/logical.ecore" xmlns:dimensional="http://com/ibm/db/models/dimensional/1.0.0/Dimensional.ecore">
+  <LogicalDataModel:Package xmi:id="_6ywiAKnxEeetA6KA_HZR2Q" name="SALES" targetNamespace="NEW_SALES_ADVENTURE_WORKS.ldm" contents="_8eoN8KnxEeetA6KA_HZR2Q _8fIkQ6nxEeetA6KA_HZR2Q _8fLnkKnxEeetA6KA_HZR2Q _8fM1sqnxEeetA6KA_HZR2Q _8fJyZqnxEeetA6KA_HZR2Q _8fOq4KnxEeetA6KA_HZR2Q _8fQgE6nxEeetA6KA_HZR2Q _8fP5CanxEeetA6KA_HZR2Q _8fRHIKnxEeetA6KA_HZR2Q _8fSVQKnxEeetA6KA_HZR2Q _8fKZdqnxEeetA6KA_HZR2Q _8fS8U6nxEeetA6KA_HZR2Q _8fUxgKnxEeetA6KA_HZR2Q _GHC1gKn5EeetA6KA_HZR2Q"/>
+  <LogicalDataModel:Entity xmi:id="_8eoN8KnxEeetA6KA_HZR2Q" name="DIMCURRENCY" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fIkQanxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Dimension" xmi:id="_8eoN8anxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8eoN8qnxEeetA6KA_HZR2Q" name="CURRENCYKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8eoN86nxEeetA6KA_HZR2Q" name="CURRENCYALTERNATEKEY" dataType="CHAR(3)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8eoN9KnxEeetA6KA_HZR2Q" name="CURRENCYNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8eoN9anxEeetA6KA_HZR2Q" name="DIMCURRENCY_PK" attributes="_8eoN8qnxEeetA6KA_HZR2Q" relationshipEnds="_8fIkQanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8eoN9qnxEeetA6KA_HZR2Q" name="DIMCURRENCY_AK" attributes="_8eoN8qnxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_8fIkQKnxEeetA6KA_HZR2Q" name="FACTINTERNETSALES_DIMCURRENCY_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fS8U6nxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fIkQanxEeetA6KA_HZR2Q" entity="_8eoN8KnxEeetA6KA_HZR2Q" key="_8eoN9anxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fIkQqnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fS8U6nxEeetA6KA_HZR2Q" key="_8fS8eKnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Entity xmi:id="_8fIkQ6nxEeetA6KA_HZR2Q" name="DIMCUSTOMER" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fJyYqnxEeetA6KA_HZR2Q _8fJyZKnxEeetA6KA_HZR2Q" relationships="_8fJyYKnxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Dimension" xmi:id="_8fIkRKnxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fIkRanxEeetA6KA_HZR2Q" name="CUSTOMERKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fIkRqnxEeetA6KA_HZR2Q" name="GEOGRAPHYKEY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fIkR6nxEeetA6KA_HZR2Q" name="CUSTOMERALTERNATEKEY" dataType="VARCHAR(15)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkSKnxEeetA6KA_HZR2Q" name="TITLE" dataType="VARCHAR(8)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkSanxEeetA6KA_HZR2Q" name="FIRSTNAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkSqnxEeetA6KA_HZR2Q" name="MIDDLENAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkS6nxEeetA6KA_HZR2Q" name="LASTNAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkTKnxEeetA6KA_HZR2Q" name="NAMESTYLE" dataType="INTEGER"/>
+    <attributes xmi:id="_8fIkTanxEeetA6KA_HZR2Q" name="BIRTHDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fIkTqnxEeetA6KA_HZR2Q" name="MARITALSTATUS" dataType="CHAR(1)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkT6nxEeetA6KA_HZR2Q" name="SUFFIX" dataType="VARCHAR(10)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkUKnxEeetA6KA_HZR2Q" name="GENDER" dataType="VARCHAR(1)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkUanxEeetA6KA_HZR2Q" name="EMAILADDRESS" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkUqnxEeetA6KA_HZR2Q" name="YEARLYINCOME" dataType="DECIMAL(5,0)"/>
+    <attributes xmi:id="_8fIkU6nxEeetA6KA_HZR2Q" name="TOTALCHILDREN" dataType="INTEGER"/>
+    <attributes xmi:id="_8fIkVKnxEeetA6KA_HZR2Q" name="NUMBERCHILDRENATHOME" dataType="INTEGER"/>
+    <attributes xmi:id="_8fIkVanxEeetA6KA_HZR2Q" name="ENGLISHEDUCATION" dataType="VARCHAR(40)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkVqnxEeetA6KA_HZR2Q" name="SPANISHEDUCATION" dataType="VARCHAR(40)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkV6nxEeetA6KA_HZR2Q" name="FRENCHEDUCATION" dataType="VARCHAR(40)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkWKnxEeetA6KA_HZR2Q" name="ENGLISHOCCUPATION" dataType="VARCHAR(100)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkWanxEeetA6KA_HZR2Q" name="SPANISHOCCUPATION" dataType="VARCHAR(100)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkWqnxEeetA6KA_HZR2Q" name="FRENCHOCCUPATION" dataType="VARCHAR(100)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fIkW6nxEeetA6KA_HZR2Q" name="HOUSEOWNERFLAG" dataType="CHAR(1)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJLUKnxEeetA6KA_HZR2Q" name="NUMBERCARSOWNED" dataType="INTEGER"/>
+    <attributes xmi:id="_8fJLUanxEeetA6KA_HZR2Q" name="ADDRESSLINE1" dataType="VARCHAR(120)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJLUqnxEeetA6KA_HZR2Q" name="ADDRESSLINE2" dataType="VARCHAR(120)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJLU6nxEeetA6KA_HZR2Q" name="PHONE" dataType="VARCHAR(20)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJLVKnxEeetA6KA_HZR2Q" name="DATEFIRSTPURCHASE" dataType="DATE"/>
+    <attributes xmi:id="_8fJLVanxEeetA6KA_HZR2Q" name="COMMUTEDISTANCE" dataType="VARCHAR(15)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJLVqnxEeetA6KA_HZR2Q" name="STATUS SOCIAL" dataType="INTEGER"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fJLV6nxEeetA6KA_HZR2Q" name="DIMCUSTOMER_PK" attributes="_8fIkRanxEeetA6KA_HZR2Q" relationshipEnds="_8fJyZKnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fJLWKnxEeetA6KA_HZR2Q" name="ForeignKey" attributes="_8fIkRqnxEeetA6KA_HZR2Q" relationshipEnds="_8fJyYqnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fJLWanxEeetA6KA_HZR2Q" name="DIMCUSTOMER_AK" attributes="_8fIkRanxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_8fJyYKnxEeetA6KA_HZR2Q" name="DIMCUSTOMER_DIMGEOGRAPHY_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fIkQ6nxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fJyYanxEeetA6KA_HZR2Q" entity="_8fJyZqnxEeetA6KA_HZR2Q" key="_8fJyc6nxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fJyYqnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fIkQ6nxEeetA6KA_HZR2Q" key="_8fJLWKnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fJyY6nxEeetA6KA_HZR2Q" name="FACTINTERNETSALES_DIMCUSTOMER_FK" existenceOptional="true" owningEntity="_8fS8U6nxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fJyZKnxEeetA6KA_HZR2Q" entity="_8fIkQ6nxEeetA6KA_HZR2Q" key="_8fJLV6nxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fJyZanxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fS8U6nxEeetA6KA_HZR2Q" key="_8fS8eanxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Entity xmi:id="_8fJyZqnxEeetA6KA_HZR2Q" name="DIMGEOGRAPHY" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fJyYanxEeetA6KA_HZR2Q _8fKZcqnxEeetA6KA_HZR2Q _8fKZdKnxEeetA6KA_HZR2Q" relationships="_8fKZcKnxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Outrigger" xmi:id="_8fJyZ6nxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fJyaKnxEeetA6KA_HZR2Q" name="GEOGRAPHYKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fJyaanxEeetA6KA_HZR2Q" name="CITY" dataType="VARCHAR(30)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJyaqnxEeetA6KA_HZR2Q" name="STATEPROVINCECODE" dataType="VARCHAR(3)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJya6nxEeetA6KA_HZR2Q" name="STATEPROVINCENAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJybKnxEeetA6KA_HZR2Q" name="COUNTRYREGIONCODE" dataType="VARCHAR(3)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJybanxEeetA6KA_HZR2Q" name="ENGLISHCOUNTRYREGIONNAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJybqnxEeetA6KA_HZR2Q" name="SPANISHCOUNTRYREGIONNAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJyb6nxEeetA6KA_HZR2Q" name="FRENCHCOUNTRYREGIONNAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJycKnxEeetA6KA_HZR2Q" name="POSTALCODE" dataType="VARCHAR(15)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fJycanxEeetA6KA_HZR2Q" name="SALESTERRITORYKEY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fJycqnxEeetA6KA_HZR2Q" name="IPADDRESSLOCATOR" dataType="VARCHAR(15)" dataTypeQualifier="BYTE"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fJyc6nxEeetA6KA_HZR2Q" name="DIMGEOGRAPHY_PK" attributes="_8fJyaKnxEeetA6KA_HZR2Q" relationshipEnds="_8fJyYanxEeetA6KA_HZR2Q _8fKZdKnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fJydKnxEeetA6KA_HZR2Q" name="ForeignKey" attributes="_8fJycanxEeetA6KA_HZR2Q" relationshipEnds="_8fKZcqnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fJydanxEeetA6KA_HZR2Q" name="DIMGEOGRAPHY_AK" attributes="_8fJyaKnxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_8fKZcKnxEeetA6KA_HZR2Q" name="DIMGEOGRAPHY_DIMSALESTERRITORY_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fJyZqnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fKZcanxEeetA6KA_HZR2Q" entity="_8fKZdqnxEeetA6KA_HZR2Q" key="_8fLAganxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fKZcqnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fJyZqnxEeetA6KA_HZR2Q" key="_8fJydKnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fKZc6nxEeetA6KA_HZR2Q" name="DIMRESELLER_DIMGEOGRAPHY_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fSVQKnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fKZdKnxEeetA6KA_HZR2Q" entity="_8fJyZqnxEeetA6KA_HZR2Q" key="_8fJyc6nxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fKZdanxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fSVQKnxEeetA6KA_HZR2Q" key="_8fSVV6nxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Entity xmi:id="_8fKZdqnxEeetA6KA_HZR2Q" name="DIMSALESTERRITORY" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fLAhKnxEeetA6KA_HZR2Q _8fKZcanxEeetA6KA_HZR2Q _8fLAh6nxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Dimension" xmi:id="_8fKZd6nxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fKZeKnxEeetA6KA_HZR2Q" name="SALESTERRITORYKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fKZeanxEeetA6KA_HZR2Q" name="SALESTERRITORYALTERNATEKEY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fKZeqnxEeetA6KA_HZR2Q" name="SALESTERRITORYREGION" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fKZe6nxEeetA6KA_HZR2Q" name="SALESTERRITORYCOUNTRY" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fKZfKnxEeetA6KA_HZR2Q" name="SALESTERRITORYGROUP" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fLAgKnxEeetA6KA_HZR2Q" name="SALESTERRITORYIMAGE" dataType="VARCHAR(1000)" dataTypeQualifier="BYTE"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fLAganxEeetA6KA_HZR2Q" name="DIMSALESTERRITORY_PK" attributes="_8fKZeKnxEeetA6KA_HZR2Q" relationshipEnds="_8fLAhKnxEeetA6KA_HZR2Q _8fKZcanxEeetA6KA_HZR2Q _8fLAh6nxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fLAgqnxEeetA6KA_HZR2Q" name="DIMSALESTERRITORY_AK" attributes="_8fKZeKnxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_8fLAg6nxEeetA6KA_HZR2Q" name="DIMEMPLOYEE_DIMSALESTERRITORY_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fM1sqnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fLAhKnxEeetA6KA_HZR2Q" entity="_8fKZdqnxEeetA6KA_HZR2Q" key="_8fLAganxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fLAhanxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fM1sqnxEeetA6KA_HZR2Q" key="_8fM11anxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fLAhqnxEeetA6KA_HZR2Q" name="FACTRESELLERSALES_DIMSALESTERRITORY_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fUxgKnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fLAh6nxEeetA6KA_HZR2Q" entity="_8fKZdqnxEeetA6KA_HZR2Q" key="_8fLAganxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fLAiKnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fUxgKnxEeetA6KA_HZR2Q" key="_8fUxranxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Entity xmi:id="_8fLnkKnxEeetA6KA_HZR2Q" name="DIMDATE" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fMOoanxEeetA6KA_HZR2Q _8fMOpKnxEeetA6KA_HZR2Q _8fMOp6nxEeetA6KA_HZR2Q _8fMOqqnxEeetA6KA_HZR2Q _8fMOranxEeetA6KA_HZR2Q _8fM1sKnxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Dimension" xmi:id="_8fLnkanxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fLnkqnxEeetA6KA_HZR2Q" name="DATEKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fLnk6nxEeetA6KA_HZR2Q" name="FULLDATEALTERNATEKEY" dataType="DATE" required="true"/>
+    <attributes xmi:id="_8fLnlKnxEeetA6KA_HZR2Q" name="DAYNUMBEROFWEEK" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fLnlanxEeetA6KA_HZR2Q" name="ENGLISHDAYNAMEOFWEEK" dataType="VARCHAR(10)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fLnlqnxEeetA6KA_HZR2Q" name="SPANISHDAYNAMEOFWEEK" dataType="VARCHAR(10)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fLnl6nxEeetA6KA_HZR2Q" name="FRENCHDAYNAMEOFWEEK" dataType="VARCHAR(10)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fLnmKnxEeetA6KA_HZR2Q" name="DAYNUMBEROFMONTH" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fLnmanxEeetA6KA_HZR2Q" name="DAYNUMBEROFYEAR" dataType="TINY" required="true"/>
+    <attributes xmi:id="_8fLnmqnxEeetA6KA_HZR2Q" name="WEEKNUMBEROFYEAR" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fLnm6nxEeetA6KA_HZR2Q" name="ENGLISHMONTHNAME" dataType="VARCHAR(10)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fLnnKnxEeetA6KA_HZR2Q" name="SPANISHMONTHNAME" dataType="VARCHAR(10)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fLnnanxEeetA6KA_HZR2Q" name="FRENCHMONTHNAME" dataType="VARCHAR(10)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fLnnqnxEeetA6KA_HZR2Q" name="MONTHNUMBEROFYEAR" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fLnn6nxEeetA6KA_HZR2Q" name="CALENDARQUARTER" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fLnoKnxEeetA6KA_HZR2Q" name="CALENDARYEAR" dataType="TINY" required="true"/>
+    <attributes xmi:id="_8fLnoanxEeetA6KA_HZR2Q" name="CALENDARSEMESTER" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fLnoqnxEeetA6KA_HZR2Q" name="FISCALQUARTER" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fLno6nxEeetA6KA_HZR2Q" name="FISCALYEAR" dataType="TINY" required="true"/>
+    <attributes xmi:id="_8fLnpKnxEeetA6KA_HZR2Q" name="FISCALSEMESTER" dataType="INTEGER" required="true"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fLnpanxEeetA6KA_HZR2Q" name="DIMDATE_PK" attributes="_8fLnkqnxEeetA6KA_HZR2Q" relationshipEnds="_8fMOoanxEeetA6KA_HZR2Q _8fMOpKnxEeetA6KA_HZR2Q _8fMOp6nxEeetA6KA_HZR2Q _8fMOqqnxEeetA6KA_HZR2Q _8fMOranxEeetA6KA_HZR2Q _8fM1sKnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fLnpqnxEeetA6KA_HZR2Q" name="DIMDATE_AK" attributes="_8fLnkqnxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_8fMOoKnxEeetA6KA_HZR2Q" name="FACTINTERNETSALES_DIMDATE_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fS8U6nxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fMOoanxEeetA6KA_HZR2Q" entity="_8fLnkKnxEeetA6KA_HZR2Q" key="_8fLnpanxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fMOoqnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fS8U6nxEeetA6KA_HZR2Q" key="_8fS8eqnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fMOo6nxEeetA6KA_HZR2Q" name="FACTINTERNETSALES_DIMDATE_FK1" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fS8U6nxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fMOpKnxEeetA6KA_HZR2Q" entity="_8fLnkKnxEeetA6KA_HZR2Q" key="_8fLnpanxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fMOpanxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fS8U6nxEeetA6KA_HZR2Q" key="_8fS8e6nxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fMOpqnxEeetA6KA_HZR2Q" name="FACTINTERNETSALES_DIMDATE_FK2" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fS8U6nxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fMOp6nxEeetA6KA_HZR2Q" entity="_8fLnkKnxEeetA6KA_HZR2Q" key="_8fLnpanxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fMOqKnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fS8U6nxEeetA6KA_HZR2Q" key="_8fS8fKnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fMOqanxEeetA6KA_HZR2Q" name="FACTRESELLERSALES_DIMDATE_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fUxgKnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fMOqqnxEeetA6KA_HZR2Q" entity="_8fLnkKnxEeetA6KA_HZR2Q" key="_8fLnpanxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fMOq6nxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fUxgKnxEeetA6KA_HZR2Q" key="_8fUxpqnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fMOrKnxEeetA6KA_HZR2Q" name="FACTRESELLERSALES_DIMDATE_FK1" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fUxgKnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fMOranxEeetA6KA_HZR2Q" entity="_8fLnkKnxEeetA6KA_HZR2Q" key="_8fLnpanxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fMOrqnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fUxgKnxEeetA6KA_HZR2Q" key="_8fUxp6nxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fMOr6nxEeetA6KA_HZR2Q" name="FACTRESELLERSALES_DIMDATE_FK2" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fUxgKnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fM1sKnxEeetA6KA_HZR2Q" entity="_8fLnkKnxEeetA6KA_HZR2Q" key="_8fLnpanxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fM1sanxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fUxgKnxEeetA6KA_HZR2Q" key="_8fUxqKnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Entity xmi:id="_8fM1sqnxEeetA6KA_HZR2Q" name="DIMEMPLOYEE" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fOD0anxEeetA6KA_HZR2Q _8fOD0qnxEeetA6KA_HZR2Q _8fLAhanxEeetA6KA_HZR2Q _8fOD1KnxEeetA6KA_HZR2Q" relationships="_8fOD0KnxEeetA6KA_HZR2Q _8fLAg6nxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Dimension" xmi:id="_8fM1s6nxEeetA6KA_HZR2Q" userDefined="true"/>
+    <attributes xmi:id="_8fM1tKnxEeetA6KA_HZR2Q" name="EMPLOYEEKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fM1tanxEeetA6KA_HZR2Q" name="PARENTEMPLOYEEKEY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fM1tqnxEeetA6KA_HZR2Q" name="EMPLOYEENATIONALIDALTERNATEKEY" dataType="VARCHAR(15)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1t6nxEeetA6KA_HZR2Q" name="PARENTEMPLOYEENATIONALIDALTERNATEKEY" dataType="VARCHAR(15)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1uKnxEeetA6KA_HZR2Q" name="SALESTERRITORYKEY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fM1uanxEeetA6KA_HZR2Q" name="FIRSTNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1uqnxEeetA6KA_HZR2Q" name="LASTNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1u6nxEeetA6KA_HZR2Q" name="MIDDLENAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1vKnxEeetA6KA_HZR2Q" name="NAMESTYLE" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fM1vanxEeetA6KA_HZR2Q" name="TITLE" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1vqnxEeetA6KA_HZR2Q" name="HIREDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fM1v6nxEeetA6KA_HZR2Q" name="BIRTHDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fM1wKnxEeetA6KA_HZR2Q" name="LOGINID" dataType="VARCHAR(256)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1wanxEeetA6KA_HZR2Q" name="EMAILADDRESS" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1wqnxEeetA6KA_HZR2Q" name="PHONE" dataType="VARCHAR(25)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1w6nxEeetA6KA_HZR2Q" name="MARITALSTATUS" dataType="CHAR(1)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1xKnxEeetA6KA_HZR2Q" name="EMERGENCYCONTACTNAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1xanxEeetA6KA_HZR2Q" name="EMERGENCYCONTACTPHONE" dataType="VARCHAR(25)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1xqnxEeetA6KA_HZR2Q" name="SALARIEDFLAG" dataType="INTEGER"/>
+    <attributes xmi:id="_8fM1x6nxEeetA6KA_HZR2Q" name="GENDER" dataType="CHAR(1)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1yKnxEeetA6KA_HZR2Q" name="PAYFREQUENCY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fM1yanxEeetA6KA_HZR2Q" name="BASERATE" dataType="DECIMAL(5,0)"/>
+    <attributes xmi:id="_8fM1yqnxEeetA6KA_HZR2Q" name="VACATIONHOURS" dataType="TINY"/>
+    <attributes xmi:id="_8fM1y6nxEeetA6KA_HZR2Q" name="SICKLEAVEHOURS" dataType="TINY"/>
+    <attributes xmi:id="_8fM1zKnxEeetA6KA_HZR2Q" name="CURRENTFLAG" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fM1zanxEeetA6KA_HZR2Q" name="SALESPERSONFLAG" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fM1zqnxEeetA6KA_HZR2Q" name="DEPARTMENTNAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM1z6nxEeetA6KA_HZR2Q" name="STARTDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fM10KnxEeetA6KA_HZR2Q" name="ENDDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fM10anxEeetA6KA_HZR2Q" name="STATUS" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fM10qnxEeetA6KA_HZR2Q" name="EMPLOYEEPHOTO" dataType="VARBINARY(10)"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fM106nxEeetA6KA_HZR2Q" name="DIMEMPLOYEE_PK" attributes="_8fM1tKnxEeetA6KA_HZR2Q" relationshipEnds="_8fOD0anxEeetA6KA_HZR2Q _8fOD1KnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fM11KnxEeetA6KA_HZR2Q" name="ForeignKey" attributes="_8fM1tanxEeetA6KA_HZR2Q" relationshipEnds="_8fOD0qnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fM11anxEeetA6KA_HZR2Q" name="ForeignKey1" attributes="_8fM1uKnxEeetA6KA_HZR2Q" relationshipEnds="_8fLAhanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fM11qnxEeetA6KA_HZR2Q" name="DIMEMPLOYEE_AK" attributes="_8fM1tKnxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+    <inversionEntries xmi:id="_8fM116nxEeetA6KA_HZR2Q" name="DIMEMPLOYEE_EMPLOYEEKEY_IDX" physicalOption="INDEX">
+      <members xmi:id="_8fM12KnxEeetA6KA_HZR2Q" attribute="_8fM1tKnxEeetA6KA_HZR2Q"/>
+      <members xmi:id="_8fM12anxEeetA6KA_HZR2Q" attribute="_8fM1uKnxEeetA6KA_HZR2Q"/>
+    </inversionEntries>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_8fOD0KnxEeetA6KA_HZR2Q" name="DIMEMPLOYEE_DIMEMPLOYEE_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fM1sqnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fOD0anxEeetA6KA_HZR2Q" entity="_8fM1sqnxEeetA6KA_HZR2Q" key="_8fM106nxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fOD0qnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fM1sqnxEeetA6KA_HZR2Q" key="_8fM11KnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fOD06nxEeetA6KA_HZR2Q" name="FACTRESELLERSALES_DIMEMPLOYEE_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fUxgKnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fOD1KnxEeetA6KA_HZR2Q" entity="_8fM1sqnxEeetA6KA_HZR2Q" key="_8fM106nxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fOD1anxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fUxgKnxEeetA6KA_HZR2Q" key="_8fUxqanxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Entity xmi:id="_8fOq4KnxEeetA6KA_HZR2Q" name="DIMPRODUCT" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fP5AqnxEeetA6KA_HZR2Q _8fP5BKnxEeetA6KA_HZR2Q _8fP5B6nxEeetA6KA_HZR2Q" relationships="_8fP5AKnxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Dimension" xmi:id="_8fOq4anxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fOq4qnxEeetA6KA_HZR2Q" name="PRODUCTKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fOq46nxEeetA6KA_HZR2Q" name="PRODUCTALTERNATEKEY" dataType="VARCHAR(25)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq5KnxEeetA6KA_HZR2Q" name="PRODUCTSUBCATEGORYKEY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fOq5anxEeetA6KA_HZR2Q" name="WEIGHTUNITMEASURECODE" dataType="CHAR(3)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq5qnxEeetA6KA_HZR2Q" name="SIZEUNITMEASURECODE" dataType="CHAR(3)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq56nxEeetA6KA_HZR2Q" name="ENGLISHPRODUCTNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq6KnxEeetA6KA_HZR2Q" name="SPANISHPRODUCTNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq6anxEeetA6KA_HZR2Q" name="FRENCHPRODUCTNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq6qnxEeetA6KA_HZR2Q" name="STANDARDCOST" dataType="DECIMAL(5,0)"/>
+    <attributes xmi:id="_8fOq66nxEeetA6KA_HZR2Q" name="FINISHEDGOODSFLAG" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fOq7KnxEeetA6KA_HZR2Q" name="COLOR" dataType="VARCHAR(15)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq7anxEeetA6KA_HZR2Q" name="SAFETYSTOCKLEVEL" dataType="TINY"/>
+    <attributes xmi:id="_8fOq7qnxEeetA6KA_HZR2Q" name="REORDERPOINT" dataType="TINY"/>
+    <attributes xmi:id="_8fOq76nxEeetA6KA_HZR2Q" name="LISTPRICE" dataType="DECIMAL(5,0)"/>
+    <attributes xmi:id="_8fOq8KnxEeetA6KA_HZR2Q" name="SIZE" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq8anxEeetA6KA_HZR2Q" name="SIZERANGE" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq8qnxEeetA6KA_HZR2Q" name="WEIGHT" dataType="DOUBLE"/>
+    <attributes xmi:id="_8fOq86nxEeetA6KA_HZR2Q" name="DAYSTOMANUFACTURE" dataType="INTEGER"/>
+    <attributes xmi:id="_8fOq9KnxEeetA6KA_HZR2Q" name="PRODUCTLINE" dataType="CHAR(2)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq9anxEeetA6KA_HZR2Q" name="DEALERPRICE" dataType="DECIMAL(5,0)"/>
+    <attributes xmi:id="_8fOq9qnxEeetA6KA_HZR2Q" name="CLASS" dataType="CHAR(2)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq96nxEeetA6KA_HZR2Q" name="STYLE" dataType="CHAR(2)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq-KnxEeetA6KA_HZR2Q" name="MODELNAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq-anxEeetA6KA_HZR2Q" name="LARGEPHOTO" dataType="VARCHAR(1000)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq-qnxEeetA6KA_HZR2Q" name="ENGLISHDESCRIPTION" dataType="VARCHAR(400)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq-6nxEeetA6KA_HZR2Q" name="FRENCHDESCRIPTION" dataType="VARCHAR(400)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq_KnxEeetA6KA_HZR2Q" name="CHINESEDESCRIPTION" dataType="VARCHAR(400)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq_anxEeetA6KA_HZR2Q" name="ARABICDESCRIPTION" dataType="VARCHAR(400)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq_qnxEeetA6KA_HZR2Q" name="HEBREWDESCRIPTION" dataType="VARCHAR(400)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOq_6nxEeetA6KA_HZR2Q" name="THAIDESCRIPTION" dataType="VARCHAR(400)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOrAKnxEeetA6KA_HZR2Q" name="GERMANDESCRIPTION" dataType="VARCHAR(400)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOrAanxEeetA6KA_HZR2Q" name="JAPANESEDESCRIPTION" dataType="VARCHAR(400)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOrAqnxEeetA6KA_HZR2Q" name="TURKISHDESCRIPTION" dataType="VARCHAR(400)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fOrA6nxEeetA6KA_HZR2Q" name="STARTDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fOrBKnxEeetA6KA_HZR2Q" name="ENDDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fOrBanxEeetA6KA_HZR2Q" name="STATUS" dataType="VARCHAR(7)" dataTypeQualifier="BYTE"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fOrBqnxEeetA6KA_HZR2Q" name="DIMPRODUCT_PK" attributes="_8fOq4qnxEeetA6KA_HZR2Q" relationshipEnds="_8fP5BKnxEeetA6KA_HZR2Q _8fP5B6nxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fOrB6nxEeetA6KA_HZR2Q" name="ForeignKey" attributes="_8fOq5KnxEeetA6KA_HZR2Q" relationshipEnds="_8fP5AqnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fOrCKnxEeetA6KA_HZR2Q" name="DIMPRODUCT_AK" attributes="_8fOq4qnxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_8fP5AKnxEeetA6KA_HZR2Q" name="DIMPRODUCT_DIMPRODUCTSUBCATEGORY_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fOq4KnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fP5AanxEeetA6KA_HZR2Q" entity="_8fP5CanxEeetA6KA_HZR2Q" key="_8fP5EanxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fP5AqnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fOq4KnxEeetA6KA_HZR2Q" key="_8fOrB6nxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fP5A6nxEeetA6KA_HZR2Q" name="FACTINTERNETSALES_DIMPRODUCT_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fS8U6nxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fP5BKnxEeetA6KA_HZR2Q" entity="_8fOq4KnxEeetA6KA_HZR2Q" key="_8fOrBqnxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fP5BanxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fS8U6nxEeetA6KA_HZR2Q" key="_8fS8fanxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fP5BqnxEeetA6KA_HZR2Q" name="FACTRESELLERSALES_DIMPRODUCT_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fUxgKnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fP5B6nxEeetA6KA_HZR2Q" entity="_8fOq4KnxEeetA6KA_HZR2Q" key="_8fOrBqnxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fP5CKnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fUxgKnxEeetA6KA_HZR2Q" key="_8fUxqqnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Entity xmi:id="_8fP5CanxEeetA6KA_HZR2Q" name="DIMPRODUCTSUBCATEGORY" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fP5AanxEeetA6KA_HZR2Q _8fQgEqnxEeetA6KA_HZR2Q" relationships="_8fQgEKnxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Outrigger" xmi:id="_8fP5CqnxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fP5C6nxEeetA6KA_HZR2Q" name="PRODUCTSUBCATEGORYKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fP5DKnxEeetA6KA_HZR2Q" name="PRODUCTSUBCATEGORYALTERNATEKEY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fP5DanxEeetA6KA_HZR2Q" name="ENGLISHPRODUCTSUBCATEGORYNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fP5DqnxEeetA6KA_HZR2Q" name="SPANISHPRODUCTSUBCATEGORYNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fP5D6nxEeetA6KA_HZR2Q" name="FRENCHPRODUCTSUBCATEGORYNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fP5EKnxEeetA6KA_HZR2Q" name="PRODUCTCATEGORYKEY" dataType="INTEGER"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fP5EanxEeetA6KA_HZR2Q" name="DIMPRODUCTSUBCATEGORY_PK" attributes="_8fP5C6nxEeetA6KA_HZR2Q" relationshipEnds="_8fP5AanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fP5EqnxEeetA6KA_HZR2Q" name="ForeignKey" attributes="_8fP5EKnxEeetA6KA_HZR2Q" relationshipEnds="_8fQgEqnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fP5E6nxEeetA6KA_HZR2Q" name="DIMPRODUCTSUBCATEGORY_AK" attributes="_8fP5C6nxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_8fQgEKnxEeetA6KA_HZR2Q" name="DIMPRODUCTSUBCATEGORY_DIMPRODUCTCATEGORY_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fP5CanxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fQgEanxEeetA6KA_HZR2Q" entity="_8fQgE6nxEeetA6KA_HZR2Q" key="_8fQgGqnxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fQgEqnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fP5CanxEeetA6KA_HZR2Q" key="_8fP5EqnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Entity xmi:id="_8fQgE6nxEeetA6KA_HZR2Q" name="DIMPRODUCTCATEGORY" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fQgEanxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Outrigger" xmi:id="_8fQgFKnxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fQgFanxEeetA6KA_HZR2Q" name="PRODUCTCATEGORYKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fQgFqnxEeetA6KA_HZR2Q" name="PRODUCTCATEGORYALTERNATEKEY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fQgF6nxEeetA6KA_HZR2Q" name="ENGLISHPRODUCTCATEGORYNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fQgGKnxEeetA6KA_HZR2Q" name="SPANISHPRODUCTCATEGORYNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fQgGanxEeetA6KA_HZR2Q" name="FRENCHPRODUCTCATEGORYNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fQgGqnxEeetA6KA_HZR2Q" name="DIMPRODUCTCATEGORY_PK" attributes="_8fQgFanxEeetA6KA_HZR2Q" relationshipEnds="_8fQgEanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fQgG6nxEeetA6KA_HZR2Q" name="DIMPRODUCTCATEGORY_AK" attributes="_8fQgFanxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Entity xmi:id="_8fRHIKnxEeetA6KA_HZR2Q" name="DIMPROMOTION" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fRuManxEeetA6KA_HZR2Q _8fRuNKnxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Dimension" xmi:id="_8fRHIanxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fRHIqnxEeetA6KA_HZR2Q" name="PROMOTIONKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fRHI6nxEeetA6KA_HZR2Q" name="PROMOTIONALTERNATEKEY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fRHJKnxEeetA6KA_HZR2Q" name="ENGLISHPROMOTIONNAME" dataType="VARCHAR(255)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fRHJanxEeetA6KA_HZR2Q" name="SPANISHPROMOTIONNAME" dataType="VARCHAR(255)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fRHJqnxEeetA6KA_HZR2Q" name="FRENCHPROMOTIONNAME" dataType="VARCHAR(255)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fRHJ6nxEeetA6KA_HZR2Q" name="DISCOUNTPCT" dataType="DOUBLE"/>
+    <attributes xmi:id="_8fRHKKnxEeetA6KA_HZR2Q" name="ENGLISHPROMOTIONTYPE" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fRHKanxEeetA6KA_HZR2Q" name="SPANISHPROMOTIONTYPE" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fRHKqnxEeetA6KA_HZR2Q" name="FRENCHPROMOTIONTYPE" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fRHK6nxEeetA6KA_HZR2Q" name="ENGLISHPROMOTIONCATEGORY" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fRHLKnxEeetA6KA_HZR2Q" name="SPANISHPROMOTIONCATEGORY" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fRHLanxEeetA6KA_HZR2Q" name="FRENCHPROMOTIONCATEGORY" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fRHLqnxEeetA6KA_HZR2Q" name="STARTDATE" dataType="DATE" required="true"/>
+    <attributes xmi:id="_8fRHL6nxEeetA6KA_HZR2Q" name="ENDDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fRHMKnxEeetA6KA_HZR2Q" name="MINQTY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fRHManxEeetA6KA_HZR2Q" name="MAXQTY" dataType="INTEGER"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fRHMqnxEeetA6KA_HZR2Q" name="DIMPROMOTION_PK" attributes="_8fRHIqnxEeetA6KA_HZR2Q" relationshipEnds="_8fRuManxEeetA6KA_HZR2Q _8fRuNKnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fRHM6nxEeetA6KA_HZR2Q" name="DIMPROMOTION_AK" attributes="_8fRHIqnxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_8fRuMKnxEeetA6KA_HZR2Q" name="FACTINTERNETSALES_DIMPROMOTION_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fS8U6nxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fRuManxEeetA6KA_HZR2Q" entity="_8fRHIKnxEeetA6KA_HZR2Q" key="_8fRHMqnxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fRuMqnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fS8U6nxEeetA6KA_HZR2Q" key="_8fS8fqnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_8fRuM6nxEeetA6KA_HZR2Q" name="FACTRESELLERSALES_DIMPROMOTION_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fUxgKnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fRuNKnxEeetA6KA_HZR2Q" entity="_8fRHIKnxEeetA6KA_HZR2Q" key="_8fRHMqnxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fRuNanxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fUxgKnxEeetA6KA_HZR2Q" key="_8fUxq6nxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Entity xmi:id="_8fSVQKnxEeetA6KA_HZR2Q" name="DIMRESELLER" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fKZdanxEeetA6KA_HZR2Q _8fS8UanxEeetA6KA_HZR2Q" relationships="_8fKZc6nxEeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Dimension" xmi:id="_8fSVQanxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fSVQqnxEeetA6KA_HZR2Q" name="RESELLERKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fSVQ6nxEeetA6KA_HZR2Q" name="GEOGRAPHYKEY" dataType="INTEGER"/>
+    <attributes xmi:id="_8fSVRKnxEeetA6KA_HZR2Q" name="RESELLERALTERNATEKEY" dataType="VARCHAR(15)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fSVRanxEeetA6KA_HZR2Q" name="PHONE" dataType="VARCHAR(25)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fSVRqnxEeetA6KA_HZR2Q" name="BUSINESSTYPE" dataType="VARCHAR(20)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fSVR6nxEeetA6KA_HZR2Q" name="RESELLERNAME" dataType="VARCHAR(50)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fSVSKnxEeetA6KA_HZR2Q" name="NUMBEREMPLOYEES" dataType="INTEGER"/>
+    <attributes xmi:id="_8fSVSanxEeetA6KA_HZR2Q" name="ORDERFREQUENCY" dataType="CHAR(1)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fSVSqnxEeetA6KA_HZR2Q" name="ORDERMONTH" dataType="INTEGER"/>
+    <attributes xmi:id="_8fSVS6nxEeetA6KA_HZR2Q" name="FIRSTORDERYEAR" dataType="INTEGER"/>
+    <attributes xmi:id="_8fSVTKnxEeetA6KA_HZR2Q" name="LASTORDERYEAR" dataType="INTEGER"/>
+    <attributes xmi:id="_8fSVTanxEeetA6KA_HZR2Q" name="PRODUCTLINE" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fSVTqnxEeetA6KA_HZR2Q" name="ADDRESSLINE1" dataType="VARCHAR(60)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fSVT6nxEeetA6KA_HZR2Q" name="ADDRESSLINE2" dataType="VARCHAR(60)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fSVUKnxEeetA6KA_HZR2Q" name="ANNUALSALES" dataType="DECIMAL(5,0)"/>
+    <attributes xmi:id="_8fSVUanxEeetA6KA_HZR2Q" name="BANKNAME" dataType="VARCHAR(50)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fSVUqnxEeetA6KA_HZR2Q" name="MINPAYMENTTYPE" dataType="INTEGER"/>
+    <attributes xmi:id="_8fSVU6nxEeetA6KA_HZR2Q" name="MINPAYMENTAMOUNT" dataType="DECIMAL(5,0)"/>
+    <attributes xmi:id="_8fSVVKnxEeetA6KA_HZR2Q" name="ANNUALREVENUE" dataType="DECIMAL(5,0)"/>
+    <attributes xmi:id="_8fSVVanxEeetA6KA_HZR2Q" name="YEAROPENED" dataType="INTEGER"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fSVVqnxEeetA6KA_HZR2Q" name="DIMRESELLER_PK" attributes="_8fSVQqnxEeetA6KA_HZR2Q" relationshipEnds="_8fS8UanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fSVV6nxEeetA6KA_HZR2Q" name="ForeignKey" attributes="_8fSVQ6nxEeetA6KA_HZR2Q" relationshipEnds="_8fKZdanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fSVWKnxEeetA6KA_HZR2Q" name="DIMRESELLER_AK" attributes="_8fSVQqnxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_8fS8UKnxEeetA6KA_HZR2Q" name="FACTRESELLERSALES_DIMRESELLER_FK" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fUxgKnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_8fS8UanxEeetA6KA_HZR2Q" entity="_8fSVQKnxEeetA6KA_HZR2Q" key="_8fSVVqnxEeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_8fS8UqnxEeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fUxgKnxEeetA6KA_HZR2Q" key="_8fUxrKnxEeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Entity xmi:id="_8fS8U6nxEeetA6KA_HZR2Q" name="FACTINTERNETSALES" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fIkQqnxEeetA6KA_HZR2Q _8fJyZanxEeetA6KA_HZR2Q _8fMOoqnxEeetA6KA_HZR2Q _8fMOpanxEeetA6KA_HZR2Q _8fMOqKnxEeetA6KA_HZR2Q _8fP5BanxEeetA6KA_HZR2Q _8fRuMqnxEeetA6KA_HZR2Q _OBPr8qn5EeetA6KA_HZR2Q" relationships="_8fIkQKnxEeetA6KA_HZR2Q _8fJyY6nxEeetA6KA_HZR2Q _8fMOoKnxEeetA6KA_HZR2Q _8fMOo6nxEeetA6KA_HZR2Q _8fMOpqnxEeetA6KA_HZR2Q _8fP5A6nxEeetA6KA_HZR2Q _8fRuMKnxEeetA6KA_HZR2Q _OBPr8Kn5EeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Fact" xmi:id="_8fS8VKnxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fS8VanxEeetA6KA_HZR2Q" name="CUSTOMERKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8VqnxEeetA6KA_HZR2Q" name="DATEKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8V6nxEeetA6KA_HZR2Q" name="SALESORDERNUMBER" dataType="VARCHAR(20)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fS8WKnxEeetA6KA_HZR2Q" name="SALESORDERLINENUMBER" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8WanxEeetA6KA_HZR2Q" name="PRODUCTKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8WqnxEeetA6KA_HZR2Q" name="ORDERDATEKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8W6nxEeetA6KA_HZR2Q" name="DUEDATEKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8XKnxEeetA6KA_HZR2Q" name="SHIPDATEKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8XanxEeetA6KA_HZR2Q" name="PROMOTIONKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8XqnxEeetA6KA_HZR2Q" name="CURRENCYKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8X6nxEeetA6KA_HZR2Q" name="SALESTERRITORYKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8YKnxEeetA6KA_HZR2Q" name="REVISIONNUMBER" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fS8YanxEeetA6KA_HZR2Q" name="ORDERQUANTITY" dataType="TINY" required="true"/>
+    <attributes xmi:id="_8fS8YqnxEeetA6KA_HZR2Q" name="UNITPRICE" dataType="DECIMAL(5,0)" required="true">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fS8Y6nxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fS8ZKnxEeetA6KA_HZR2Q" name="EXTENDEDAMOUNT" dataType="DECIMAL(5,0)" required="true">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fS8ZanxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fS8ZqnxEeetA6KA_HZR2Q" name="UNITPRICEDISCOUNTPCT" dataType="DOUBLE" required="true"/>
+    <attributes xmi:id="_8fS8Z6nxEeetA6KA_HZR2Q" name="DISCOUNTAMOUNT" dataType="DOUBLE" required="true"/>
+    <attributes xmi:id="_8fS8aKnxEeetA6KA_HZR2Q" name="PRODUCTSTANDARDCOST" dataType="DECIMAL(5,0)" required="true">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fS8aanxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fS8aqnxEeetA6KA_HZR2Q" name="TOTALPRODUCTCOST" dataType="DECIMAL(5,0)" required="true">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fS8a6nxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fS8bKnxEeetA6KA_HZR2Q" name="SALESAMOUNT" dataType="DECIMAL(5,0)" required="true">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fS8banxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fS8bqnxEeetA6KA_HZR2Q" name="TAXAMT" dataType="DECIMAL(5,0)" required="true">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fS8b6nxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fS8cKnxEeetA6KA_HZR2Q" name="FREIGHT" dataType="DECIMAL(5,0)" required="true">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fS8canxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fS8cqnxEeetA6KA_HZR2Q" name="CARRIERTRACKINGNUMBER" dataType="VARCHAR(25)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fS8c6nxEeetA6KA_HZR2Q" name="CUSTOMERPONUMBER" dataType="VARCHAR(25)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fS8dKnxEeetA6KA_HZR2Q" name="ORDERDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fS8danxEeetA6KA_HZR2Q" name="DUEDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fS8dqnxEeetA6KA_HZR2Q" name="SHIPDATE" dataType="DATE"/>
+    <attributes xmi:id="_L0eSYKn5EeetA6KA_HZR2Q" name="PROMOTIONKEY2" dataType="INTEGER"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fS8d6nxEeetA6KA_HZR2Q" name="FACTINTERNETSALES_PK" attributes="_8fS8VanxEeetA6KA_HZR2Q _8fS8VqnxEeetA6KA_HZR2Q _8fS8V6nxEeetA6KA_HZR2Q _8fS8WKnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fS8eKnxEeetA6KA_HZR2Q" name="ForeignKey" attributes="_8fS8XqnxEeetA6KA_HZR2Q" relationshipEnds="_8fIkQqnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fS8eanxEeetA6KA_HZR2Q" name="ForeignKey1" attributes="_8fS8VanxEeetA6KA_HZR2Q" relationshipEnds="_8fJyZanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fS8eqnxEeetA6KA_HZR2Q" name="ForeignKey2" attributes="_8fS8WqnxEeetA6KA_HZR2Q" relationshipEnds="_8fMOoqnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fS8e6nxEeetA6KA_HZR2Q" name="ForeignKey3" attributes="_8fS8W6nxEeetA6KA_HZR2Q" relationshipEnds="_8fMOpanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fS8fKnxEeetA6KA_HZR2Q" name="ForeignKey4" attributes="_8fS8XKnxEeetA6KA_HZR2Q" relationshipEnds="_8fMOqKnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fS8fanxEeetA6KA_HZR2Q" name="ForeignKey5" attributes="_8fS8WanxEeetA6KA_HZR2Q" relationshipEnds="_8fP5BanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fS8fqnxEeetA6KA_HZR2Q" name="ForeignKey6" attributes="_8fS8XanxEeetA6KA_HZR2Q" relationshipEnds="_8fRuMqnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fTjYKnxEeetA6KA_HZR2Q" name="FACTINTERNETSALES_AK" attributes="_8fS8V6nxEeetA6KA_HZR2Q _8fS8WKnxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fTjYanxEeetA6KA_HZR2Q" name="FACTINTERNETSALES_PK" attributes="_8fS8VanxEeetA6KA_HZR2Q _8fS8VqnxEeetA6KA_HZR2Q _8fS8V6nxEeetA6KA_HZR2Q _8fS8WKnxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_OAyY8Kn5EeetA6KA_HZR2Q" name="ForeignKey7" attributes="_L0eSYKn5EeetA6KA_HZR2Q" relationshipEnds="_OBPr8qn5EeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Entity xmi:id="_8fUxgKnxEeetA6KA_HZR2Q" name="FACTRESELLERSALES" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_8fMOq6nxEeetA6KA_HZR2Q _8fMOrqnxEeetA6KA_HZR2Q _8fM1sanxEeetA6KA_HZR2Q _8fOD1anxEeetA6KA_HZR2Q _8fP5CKnxEeetA6KA_HZR2Q _8fRuNanxEeetA6KA_HZR2Q _8fS8UqnxEeetA6KA_HZR2Q _8fLAiKnxEeetA6KA_HZR2Q _RJQlwqn5EeetA6KA_HZR2Q" relationships="_8fMOqanxEeetA6KA_HZR2Q _8fMOrKnxEeetA6KA_HZR2Q _8fMOr6nxEeetA6KA_HZR2Q _8fOD06nxEeetA6KA_HZR2Q _8fP5BqnxEeetA6KA_HZR2Q _8fRuM6nxEeetA6KA_HZR2Q _8fS8UKnxEeetA6KA_HZR2Q _8fLAhqnxEeetA6KA_HZR2Q _RJQlwKn5EeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Fact" xmi:id="_8fUxganxEeetA6KA_HZR2Q"/>
+    <attributes xmi:id="_8fUxgqnxEeetA6KA_HZR2Q" name="SALESORDERNUMBER" dataType="VARCHAR(20)" required="true" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fUxg6nxEeetA6KA_HZR2Q" name="SALESORDERLINENUMBER" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fUxhKnxEeetA6KA_HZR2Q" name="PRODUCTKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fUxhanxEeetA6KA_HZR2Q" name="ORDERDATEKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fUxhqnxEeetA6KA_HZR2Q" name="DUEDATEKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fUxh6nxEeetA6KA_HZR2Q" name="SHIPDATEKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fUxiKnxEeetA6KA_HZR2Q" name="RESELLERKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fUxianxEeetA6KA_HZR2Q" name="EMPLOYEEKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fUxiqnxEeetA6KA_HZR2Q" name="PROMOTIONKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fUxi6nxEeetA6KA_HZR2Q" name="CURRENCYKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fUxjKnxEeetA6KA_HZR2Q" name="SALESTERRITORYKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_8fUxjanxEeetA6KA_HZR2Q" name="REVISIONNUMBER" dataType="INTEGER"/>
+    <attributes xmi:id="_8fUxjqnxEeetA6KA_HZR2Q" name="ORDERQUANTITY" dataType="TINY"/>
+    <attributes xmi:id="_8fUxj6nxEeetA6KA_HZR2Q" name="UNITPRICE" dataType="DECIMAL(5,0)">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fUxkKnxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fUxkanxEeetA6KA_HZR2Q" name="EXTENDEDAMOUNT" dataType="DECIMAL(5,0)">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fUxkqnxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fUxk6nxEeetA6KA_HZR2Q" name="UNITPRICEDISCOUNTPCT" dataType="DOUBLE"/>
+    <attributes xmi:id="_8fUxlKnxEeetA6KA_HZR2Q" name="DISCOUNTAMOUNT" dataType="DOUBLE"/>
+    <attributes xmi:id="_8fUxlanxEeetA6KA_HZR2Q" name="PRODUCTSTANDARDCOST" dataType="DECIMAL(5,0)">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fUxlqnxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fUxl6nxEeetA6KA_HZR2Q" name="TOTALPRODUCTCOST" dataType="DECIMAL(5,0)">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fUxmKnxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fUxmanxEeetA6KA_HZR2Q" name="SALESAMOUNT" dataType="DECIMAL(5,0)">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fUxmqnxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fUxm6nxEeetA6KA_HZR2Q" name="TAXAMT" dataType="DECIMAL(5,0)">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fUxnKnxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fUxnanxEeetA6KA_HZR2Q" name="FREIGHT" dataType="DECIMAL(5,0)">
+      <extensions xsi:type="dimensional:Measure" xmi:id="_8fUxnqnxEeetA6KA_HZR2Q"/>
+    </attributes>
+    <attributes xmi:id="_8fUxn6nxEeetA6KA_HZR2Q" name="CARRIERTRACKINGNUMBER" dataType="VARCHAR(25)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fUxoKnxEeetA6KA_HZR2Q" name="CUSTOMERPONUMBER" dataType="VARCHAR(25)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_8fUxoanxEeetA6KA_HZR2Q" name="ORDERDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fUxoqnxEeetA6KA_HZR2Q" name="DUEDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fUxo6nxEeetA6KA_HZR2Q" name="SHIPDATE" dataType="DATE"/>
+    <attributes xmi:id="_8fUxpKnxEeetA6KA_HZR2Q" name="ATTRIBUTE1" dataType="CHAR(5)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_Py5PwKn5EeetA6KA_HZR2Q" name="PROMOTIONKEY2" dataType="INTEGER"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_8fUxpanxEeetA6KA_HZR2Q" name="FACTRESELLERSALES_PK" attributes="_8fUxgqnxEeetA6KA_HZR2Q _8fUxg6nxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fUxpqnxEeetA6KA_HZR2Q" name="ForeignKey" attributes="_8fUxhanxEeetA6KA_HZR2Q" relationshipEnds="_8fMOq6nxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fUxp6nxEeetA6KA_HZR2Q" name="ForeignKey1" attributes="_8fUxhqnxEeetA6KA_HZR2Q" relationshipEnds="_8fMOrqnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fUxqKnxEeetA6KA_HZR2Q" name="ForeignKey2" attributes="_8fUxh6nxEeetA6KA_HZR2Q" relationshipEnds="_8fM1sanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fUxqanxEeetA6KA_HZR2Q" name="ForeignKey3" attributes="_8fUxianxEeetA6KA_HZR2Q" relationshipEnds="_8fOD1anxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fUxqqnxEeetA6KA_HZR2Q" name="ForeignKey4" attributes="_8fUxhKnxEeetA6KA_HZR2Q" relationshipEnds="_8fP5CKnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fUxq6nxEeetA6KA_HZR2Q" name="ForeignKey5" attributes="_8fUxiqnxEeetA6KA_HZR2Q" relationshipEnds="_8fRuNanxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fUxrKnxEeetA6KA_HZR2Q" name="ForeignKey6" attributes="_8fUxiKnxEeetA6KA_HZR2Q" relationshipEnds="_8fS8UqnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_8fUxranxEeetA6KA_HZR2Q" name="ForeignKey7" attributes="_8fUxjKnxEeetA6KA_HZR2Q" relationshipEnds="_8fLAiKnxEeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_8fUxrqnxEeetA6KA_HZR2Q" name="FACTRESELLERSALES_AK" attributes="_8fUxgqnxEeetA6KA_HZR2Q _8fUxg6nxEeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+    <keys xsi:type="LogicalDataModel:ForeignKey" xmi:id="_RIzSwKn5EeetA6KA_HZR2Q" name="ForeignKey8" attributes="_Py5PwKn5EeetA6KA_HZR2Q" relationshipEnds="_RJQlwqn5EeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Entity xmi:id="_GHC1gKn5EeetA6KA_HZR2Q" name="DIMPROMOTION2" package="_6ywiAKnxEeetA6KA_HZR2Q" relationshipEnds="_OBPr8an5EeetA6KA_HZR2Q _RJQlwan5EeetA6KA_HZR2Q">
+    <extensions xsi:type="dimensional:Dimension" xmi:id="_GHDckKn5EeetA6KA_HZR2Q" userDefined="true"/>
+    <attributes xmi:id="_GHDckan5EeetA6KA_HZR2Q" name="PROMOTIONKEY" dataType="INTEGER" required="true"/>
+    <attributes xmi:id="_GHDckqn5EeetA6KA_HZR2Q" name="PROMOTIONALTERNATIVEKEY" dataType="VARCHAR(5)" dataTypeQualifier="BYTE"/>
+    <attributes xmi:id="_GHDck6n5EeetA6KA_HZR2Q" name="PROMOTIONNAME" dataType="VARCHAR(30)" dataTypeQualifier="BYTE"/>
+    <keys xsi:type="LogicalDataModel:PrimaryKey" xmi:id="_GHDclKn5EeetA6KA_HZR2Q" name="SQL171005123246620" attributes="_GHDckan5EeetA6KA_HZR2Q" relationshipEnds="_OBPr8an5EeetA6KA_HZR2Q _RJQlwan5EeetA6KA_HZR2Q"/>
+    <keys xsi:type="LogicalDataModel:AlternateKey" xmi:id="_GHDclan5EeetA6KA_HZR2Q" name="SQL171005123246380" attributes="_GHDckan5EeetA6KA_HZR2Q" physicalOption="UNIQUE_INDEX"/>
+  </LogicalDataModel:Entity>
+  <LogicalDataModel:Relationship xmi:id="_OBPr8Kn5EeetA6KA_HZR2Q" name="FK_FACTINTERNETSALES_PROMOTION_KEY" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fS8U6nxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_OBPr8an5EeetA6KA_HZR2Q" entity="_GHC1gKn5EeetA6KA_HZR2Q" key="_GHDclKn5EeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_OBPr8qn5EeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fS8U6nxEeetA6KA_HZR2Q" key="_OAyY8Kn5EeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+  <LogicalDataModel:Relationship xmi:id="_RJQlwKn5EeetA6KA_HZR2Q" name="FK_FACTINTERNETSALES_PROMOTION_KEY" relationshipType="NON_IDENTIFYING" existenceOptional="true" owningEntity="_8fUxgKnxEeetA6KA_HZR2Q">
+    <relationshipEnds xmi:id="_RJQlwan5EeetA6KA_HZR2Q" entity="_GHC1gKn5EeetA6KA_HZR2Q" key="_GHDclKn5EeetA6KA_HZR2Q"/>
+    <relationshipEnds xmi:id="_RJQlwqn5EeetA6KA_HZR2Q" cardinality="ZERO_TO_MANY" entity="_8fUxgKnxEeetA6KA_HZR2Q" key="_RIzSwKn5EeetA6KA_HZR2Q"/>
+  </LogicalDataModel:Relationship>
+</xmi:XMI>

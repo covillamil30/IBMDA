@@ -1,0 +1,1866 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://SALES_ADVENTURE/" xmlns:SALES_ADVENTURE="http://SALES_ADVENTURE/">
+  <xsd:complexType name="DIMACCOUNT">
+    <xsd:sequence>
+      <xsd:element name="ACCOUNTKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="ACCOUNTCODEALTERNATEKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="PARENTACCOUNTCODEALTERNATEKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="ACCOUNTDESCRIPTION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ACCOUNTTYPE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="OPERATOR">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CUSTOMMEMBERS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="300"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VALUETYPE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CUSTOMMEMBEROPTIONS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="200"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMACCOUNT" type="SALES_ADVENTURE:DIMACCOUNT">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMACCOUNT_1</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMACCOUNT_1" type="SALES_ADVENTURE:DIMACCOUNT">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMACCOUNT</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMACCOUNT" type="SALES_ADVENTURE:DIMACCOUNT">
+    <xsd:key name="SALES_ADVENTURE_DIMACCOUNT_DIMACCOUNT_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="ACCOUNTKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMCURRENCY">
+    <xsd:sequence>
+      <xsd:element name="CURRENCYKEY" type="xsd:integer"/>
+      <xsd:element name="CURRENCYALTERNATEKEY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="3"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="CURRENCYNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMORGANIZATION" type="SALES_ADVENTURE:DIMORGANIZATION">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMCURRENCY</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMCURRENCY</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMCURRENCY" type="SALES_ADVENTURE:DIMCURRENCY">
+    <xsd:key name="SALES_ADVENTURE_DIMCURRENCY_DIMCURRENCY_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="CURRENCYKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMCUSTOMER">
+    <xsd:sequence>
+      <xsd:element name="CUSTOMERKEY" type="xsd:integer"/>
+      <xsd:element name="CUSTOMERALTERNATEKEY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="TITLE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="FIRSTNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MIDDLENAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="LASTNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="NAMESTYLE" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="BIRTHDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="MARITALSTATUS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SUFFIX">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="GENDER">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="EMAILADDRESS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="YEARLYINCOME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="TOTALCHILDREN" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="NUMBERCHILDRENATHOME" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="ENGLISHEDUCATION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="40"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SPANISHEDUCATION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="40"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="FRENCHEDUCATION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="40"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ENGLISHOCCUPATION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SPANISHOCCUPATION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="FRENCHOCCUPATION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="100"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="HOUSEOWNERFLAG">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="NUMBERCARSOWNED" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="ADDRESSLINE1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="120"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ADDRESSLINE2">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="120"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PHONE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DATEFIRSTPURCHASE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="COMMUTEDISTANCE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMGEOGRAPHY" type="SALES_ADVENTURE:DIMGEOGRAPHY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMCUSTOMER</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMCUSTOMER</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES_1" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase>Verb1</inverseVerbPhrase>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMCUSTOMER" type="SALES_ADVENTURE:DIMCUSTOMER">
+    <xsd:key name="SALES_ADVENTURE_DIMCUSTOMER_DIMCUSTOMER_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="CUSTOMERKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMDATE">
+    <xsd:sequence>
+      <xsd:element name="DATEKEY" type="xsd:integer"/>
+      <xsd:element name="FULLDATEALTERNATEKEY" type="xsd:date"/>
+      <xsd:element name="DAYNUMBEROFWEEK" type="xsd:integer"/>
+      <xsd:element name="ENGLISHDAYNAMEOFWEEK">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SPANISHDAYNAMEOFWEEK">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="FRENCHDAYNAMEOFWEEK">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="DAYNUMBEROFMONTH" type="xsd:integer"/>
+      <xsd:element name="DAYNUMBEROFYEAR" type="xsd:short"/>
+      <xsd:element name="WEEKNUMBEROFYEAR" type="xsd:integer"/>
+      <xsd:element name="ENGLISHMONTHNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SPANISHMONTHNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="FRENCHMONTHNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="MONTHNUMBEROFYEAR" type="xsd:integer"/>
+      <xsd:element name="CALENDARQUARTER" type="xsd:integer"/>
+      <xsd:element name="CALENDARYEAR" type="xsd:short"/>
+      <xsd:element name="CALENDARSEMESTER" type="xsd:integer"/>
+      <xsd:element name="FISCALQUARTER" type="xsd:integer"/>
+      <xsd:element name="FISCALYEAR" type="xsd:short"/>
+      <xsd:element name="FISCALSEMESTER" type="xsd:integer"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMDATE</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES_1" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMDATE_1</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES_2" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMDATE_1_2</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES_3" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase>Verb2</inverseVerbPhrase>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES_4" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase>Verb3</inverseVerbPhrase>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES_5" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase>Verb4</inverseVerbPhrase>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTRESELLERSALES" type="SALES_ADVENTURE:FACTRESELLERSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMDATE</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTRESELLERSALES_1" type="SALES_ADVENTURE:FACTRESELLERSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMDATE_1</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTRESELLERSALES_2" type="SALES_ADVENTURE:FACTRESELLERSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMDATE_1_2</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMDATE" type="SALES_ADVENTURE:DIMDATE">
+    <xsd:key name="SALES_ADVENTURE_DIMDATE_DIMDATE_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="DATEKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMDEPARTMENTGROUP">
+    <xsd:sequence>
+      <xsd:element name="DEPARTMENTGROUPKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="DEPARTMENTGROUPNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMDEPARTMENTGROUP" type="SALES_ADVENTURE:DIMDEPARTMENTGROUP">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMDEPARTMENTGROUP_1</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMDEPARTMENTGROUP_1" type="SALES_ADVENTURE:DIMDEPARTMENTGROUP">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMDEPARTMENTGROUP</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMDEPARTMENTGROUP" type="SALES_ADVENTURE:DIMDEPARTMENTGROUP">
+    <xsd:key name="SALES_ADVENTURE_DIMDEPARTMENTGROUP_DIMDEPARTMENTGROUP_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="DEPARTMENTGROUPKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:simpleType name="VARBINARY">
+    <xsd:annotation/>
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="10"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DIMEMPLOYEE">
+    <xsd:sequence>
+      <xsd:element name="EMPLOYEEKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="EMPLOYEENATIONALIDALTERNATEKEY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PARENTEMPLOYEENATIONALIDALTERNATEKEY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="FIRSTNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="LASTNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MIDDLENAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="NAMESTYLE" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="TITLE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="HIREDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="BIRTHDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="LOGINID">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="256"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="EMAILADDRESS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PHONE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="25"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MARITALSTATUS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="EMERGENCYCONTACTNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="EMERGENCYCONTACTPHONE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="25"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SALARIEDFLAG" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="GENDER">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PAYFREQUENCY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="BASERATE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VACATIONHOURS" type="xsd:short"/>
+      <xsd:element minOccurs="0" name="SICKLEAVEHOURS" type="xsd:short"/>
+      <xsd:element name="CURRENTFLAG" type="xsd:integer"/>
+      <xsd:element name="SALESPERSONFLAG" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="DEPARTMENTNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="STARTDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="ENDDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="STATUS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="EMPLOYEEPHOTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:base64Binary">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMEMPLOYEE" type="SALES_ADVENTURE:DIMEMPLOYEE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMEMPLOYEE_1</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMEMPLOYEE_1" type="SALES_ADVENTURE:DIMEMPLOYEE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMEMPLOYEE</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMSALESTERRITORY" type="SALES_ADVENTURE:DIMSALESTERRITORY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMEMPLOYEE</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTRESELLERSALES" type="SALES_ADVENTURE:FACTRESELLERSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMEMPLOYEE</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMEMPLOYEE" type="SALES_ADVENTURE:DIMEMPLOYEE">
+    <xsd:key name="SALES_ADVENTURE_DIMEMPLOYEE_DIMEMPLOYEE_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="EMPLOYEEKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMGEOGRAPHY">
+    <xsd:sequence>
+      <xsd:element name="GEOGRAPHYKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="CITY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="STATEPROVINCECODE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="3"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="STATEPROVINCENAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="COUNTRYREGIONCODE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="3"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ENGLISHCOUNTRYREGIONNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SPANISHCOUNTRYREGIONNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="FRENCHCOUNTRYREGIONNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="POSTALCODE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="IPADDRESSLOCATOR">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMSALESTERRITORY" type="SALES_ADVENTURE:DIMSALESTERRITORY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMGEOGRAPHY</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMRESELLER" type="SALES_ADVENTURE:DIMRESELLER">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMGEOGRAPHY</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMCUSTOMER" type="SALES_ADVENTURE:DIMCUSTOMER">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMGEOGRAPHY</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMGEOGRAPHY" type="SALES_ADVENTURE:DIMGEOGRAPHY">
+    <xsd:key name="SALES_ADVENTURE_DIMGEOGRAPHY_DIMGEOGRAPHY_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="GEOGRAPHYKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMORGANIZATION">
+    <xsd:sequence>
+      <xsd:element name="ORGANIZATIONKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="PERCENTAGEOFOWNERSHIP">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ORGANIZATIONNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMCURRENCY" type="SALES_ADVENTURE:DIMCURRENCY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMORGANIZATION</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMORGANIZATION" type="SALES_ADVENTURE:DIMORGANIZATION">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMORGANIZATION_1</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMORGANIZATION_1" type="SALES_ADVENTURE:DIMORGANIZATION">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMORGANIZATION</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMORGANIZATION" type="SALES_ADVENTURE:DIMORGANIZATION">
+    <xsd:key name="SALES_ADVENTURE_DIMORGANIZATION_DIMORGANIZATION_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="ORGANIZATIONKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMPRODUCT">
+    <xsd:sequence>
+      <xsd:element name="PRODUCTKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="PRODUCTALTERNATEKEY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="25"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="WEIGHTUNITMEASURECODE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="3"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SIZEUNITMEASURECODE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="3"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="ENGLISHPRODUCTNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SPANISHPRODUCTNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="FRENCHPRODUCTNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="STANDARDCOST">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="FINISHEDGOODSFLAG" type="xsd:integer"/>
+      <xsd:element name="COLOR">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SAFETYSTOCKLEVEL" type="xsd:short"/>
+      <xsd:element minOccurs="0" name="REORDERPOINT" type="xsd:short"/>
+      <xsd:element minOccurs="0" name="LISTPRICE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SIZE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SIZERANGE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="WEIGHT" type="xsd:double"/>
+      <xsd:element minOccurs="0" name="DAYSTOMANUFACTURE" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="PRODUCTLINE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DEALERPRICE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CLASS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="STYLE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MODELNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="LARGEPHOTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1000"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ENGLISHDESCRIPTION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="400"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="FRENCHDESCRIPTION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="400"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CHINESEDESCRIPTION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="400"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ARABICDESCRIPTION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="400"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="HEBREWDESCRIPTION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="400"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="THAIDESCRIPTION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="400"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="GERMANDESCRIPTION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="400"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="JAPANESEDESCRIPTION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="400"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="TURKISHDESCRIPTION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="400"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="STARTDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="ENDDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="STATUS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="7"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMPRODUCTSUBCATEGORY" type="SALES_ADVENTURE:DIMPRODUCTSUBCATEGORY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMPRODUCT</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMPRODUCT</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTRESELLERSALES" type="SALES_ADVENTURE:FACTRESELLERSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMPRODUCT</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMPRODUCT" type="SALES_ADVENTURE:DIMPRODUCT">
+    <xsd:key name="SALES_ADVENTURE_DIMPRODUCT_DIMPRODUCT_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="PRODUCTKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMPRODUCTCATEGORY">
+    <xsd:sequence>
+      <xsd:element name="PRODUCTCATEGORYKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="PRODUCTCATEGORYALTERNATEKEY" type="xsd:integer"/>
+      <xsd:element name="ENGLISHPRODUCTCATEGORYNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SPANISHPRODUCTCATEGORYNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="FRENCHPRODUCTCATEGORYNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMPRODUCTSUBCATEGORY" type="SALES_ADVENTURE:DIMPRODUCTSUBCATEGORY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMPRODUCTCATEGORY</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMPRODUCTCATEGORY" type="SALES_ADVENTURE:DIMPRODUCTCATEGORY">
+    <xsd:key name="SALES_ADVENTURE_DIMPRODUCTCATEGORY_DIMPRODUCTCATEGORY_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="PRODUCTCATEGORYKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMPRODUCTSUBCATEGORY">
+    <xsd:sequence>
+      <xsd:element name="PRODUCTSUBCATEGORYKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="PRODUCTSUBCATEGORYALTERNATEKEY" type="xsd:integer"/>
+      <xsd:element name="ENGLISHPRODUCTSUBCATEGORYNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SPANISHPRODUCTSUBCATEGORYNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="FRENCHPRODUCTSUBCATEGORYNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMPRODUCTCATEGORY" type="SALES_ADVENTURE:DIMPRODUCTCATEGORY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMPRODUCTSUBCATEGORY</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMPRODUCT" type="SALES_ADVENTURE:DIMPRODUCT">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMPRODUCTSUBCATEGORY</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMPRODUCTSUBCATEGORY" type="SALES_ADVENTURE:DIMPRODUCTSUBCATEGORY">
+    <xsd:key name="SALES_ADVENTURE_DIMPRODUCTSUBCATEGORY_DIMPRODUCTSUBCATEGORY_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="PRODUCTSUBCATEGORYKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMPROMOTION">
+    <xsd:sequence>
+      <xsd:element name="PROMOTIONKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="PROMOTIONALTERNATEKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="ENGLISHPROMOTIONNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="255"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SPANISHPROMOTIONNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="255"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="FRENCHPROMOTIONNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="255"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DISCOUNTPCT" type="xsd:double"/>
+      <xsd:element minOccurs="0" name="ENGLISHPROMOTIONTYPE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SPANISHPROMOTIONTYPE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="FRENCHPROMOTIONTYPE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ENGLISHPROMOTIONCATEGORY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SPANISHPROMOTIONCATEGORY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="FRENCHPROMOTIONCATEGORY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="STARTDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="ENDDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="MINQTY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="MAXQTY" type="xsd:integer"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTINTERNETSALES" type="SALES_ADVENTURE:FACTINTERNETSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMPROMOTION</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTRESELLERSALES" type="SALES_ADVENTURE:FACTRESELLERSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMPROMOTION</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMPROMOTION" type="SALES_ADVENTURE:DIMPROMOTION">
+    <xsd:key name="SALES_ADVENTURE_DIMPROMOTION_DIMPROMOTION_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="PROMOTIONKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMRESELLER">
+    <xsd:sequence>
+      <xsd:element name="RESELLERKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="RESELLERALTERNATEKEY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PHONE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="25"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="BUSINESSTYPE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="RESELLERNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="NUMBEREMPLOYEES" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="ORDERFREQUENCY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ORDERMONTH" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="FIRSTORDERYEAR" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="LASTORDERYEAR" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="PRODUCTLINE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ADDRESSLINE1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="60"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ADDRESSLINE2">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="60"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ANNUALSALES">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="BANKNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MINPAYMENTTYPE" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="MINPAYMENTAMOUNT">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ANNUALREVENUE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="YEAROPENED" type="xsd:integer"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMGEOGRAPHY" type="SALES_ADVENTURE:DIMGEOGRAPHY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_DIMRESELLER</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTRESELLERSALES" type="SALES_ADVENTURE:FACTRESELLERSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMRESELLER</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMRESELLER" type="SALES_ADVENTURE:DIMRESELLER">
+    <xsd:key name="SALES_ADVENTURE_DIMRESELLER_DIMRESELLER_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="RESELLERKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMSALESREASON">
+    <xsd:sequence>
+      <xsd:element name="SALESREASONKEY" type="xsd:integer"/>
+      <xsd:element name="SALESREASONALTERNATEKEY" type="xsd:integer"/>
+      <xsd:element name="SALESREASONNAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SALESREASONREASONTYPE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMSALESREASON" type="SALES_ADVENTURE:DIMSALESREASON">
+    <xsd:key name="SALES_ADVENTURE_DIMSALESREASON_DIMSALESREASON_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="SALESREASONKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMSALESTERRITORY">
+    <xsd:sequence>
+      <xsd:element name="SALESTERRITORYKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="SALESTERRITORYALTERNATEKEY" type="xsd:integer"/>
+      <xsd:element name="SALESTERRITORYREGION">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SALESTERRITORYCOUNTRY">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SALESTERRITORYGROUP">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SALESTERRITORYIMAGE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1000"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_FACTRESELLERSALES" type="SALES_ADVENTURE:FACTRESELLERSALES">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMSALESTERRITORY</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMEMPLOYEE" type="SALES_ADVENTURE:DIMEMPLOYEE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMSALESTERRITORY</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="_DIMGEOGRAPHY" type="SALES_ADVENTURE:DIMGEOGRAPHY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseVerbPhrase/>
+          </xsd:appinfo>
+          <xsd:appinfo>
+            <inverseOf>_DIMSALESTERRITORY</inverseOf>
+            <relationshipEnd>parent</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMSALESTERRITORY" type="SALES_ADVENTURE:DIMSALESTERRITORY">
+    <xsd:key name="SALES_ADVENTURE_DIMSALESTERRITORY_DIMSALESTERRITORY_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="SALESTERRITORYKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="DIMSCENARIO">
+    <xsd:sequence>
+      <xsd:element name="SCENARIOKEY" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="SCENARIONAME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DIMSCENARIO" type="SALES_ADVENTURE:DIMSCENARIO">
+    <xsd:key name="SALES_ADVENTURE_DIMSCENARIO_DIMSCENARIO_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="SCENARIOKEY"/>
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="FACTINTERNETSALES">
+    <xsd:sequence>
+      <xsd:element name="SALESTERRITORYKEY" type="xsd:integer"/>
+      <xsd:element name="SALESORDERNUMBER">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SALESORDERLINENUMBER" type="xsd:integer"/>
+      <xsd:element name="REVISIONNUMBER" type="xsd:integer"/>
+      <xsd:element name="ORDERQUANTITY" type="xsd:short"/>
+      <xsd:element name="UNITPRICE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="EXTENDEDAMOUNT">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="UNITPRICEDISCOUNTPCT" type="xsd:double"/>
+      <xsd:element name="DISCOUNTAMOUNT" type="xsd:double"/>
+      <xsd:element name="PRODUCTSTANDARDCOST">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="TOTALPRODUCTCOST">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SALESAMOUNT">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="TAXAMT">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="FREIGHT">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CARRIERTRACKINGNUMBER">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="25"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CUSTOMERPONUMBER">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="25"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ORDERDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="DUEDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="SHIPDATE" type="xsd:date"/>
+      <xsd:element name="DATEKEY" type="xsd:integer"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMCURRENCY" type="SALES_ADVENTURE:DIMCURRENCY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTINTERNETSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMCUSTOMER" type="SALES_ADVENTURE:DIMCUSTOMER">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTINTERNETSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMDATE" type="SALES_ADVENTURE:DIMDATE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTINTERNETSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMDATE_1" type="SALES_ADVENTURE:DIMDATE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTINTERNETSALES_1</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMDATE_1_2" type="SALES_ADVENTURE:DIMDATE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTINTERNETSALES_2</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMPRODUCT" type="SALES_ADVENTURE:DIMPRODUCT">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTINTERNETSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMPROMOTION" type="SALES_ADVENTURE:DIMPROMOTION">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTINTERNETSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CUSTOMERKEY" type="xsd:integer"/>
+      <xsd:element name="DATEKEY" type="xsd:integer"/>
+      <xsd:element name="DATEKEY" type="xsd:integer"/>
+      <xsd:element name="DATEKEY" type="xsd:integer"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="FACTINTERNETSALES" type="SALES_ADVENTURE:FACTINTERNETSALES">
+    <xsd:key name="SALES_ADVENTURE_FACTINTERNETSALES_FACTINTERNETSALES_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="SALESORDERNUMBER"/>
+      <xsd:field xpath="SALESORDERLINENUMBER"/>
+      <xsd:field xpath="DATEKEY"/>
+    </xsd:key>
+    <xsd:keyref name="FACTINTERNETSALES_DIMCUSTOMER_FK" refer="SALES_ADVENTURE:SALES_ADVENTURE_DIMCUSTOMER_DIMCUSTOMER_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="CUSTOMERKEY"/>
+    </xsd:keyref>
+    <xsd:keyref name="FACTINTERNETSALES_DIMDATE_FK" refer="SALES_ADVENTURE:SALES_ADVENTURE_DIMDATE_DIMDATE_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="DATEKEY"/>
+    </xsd:keyref>
+    <xsd:keyref name="FACTINTERNETSALES_DIMDATE_FK" refer="SALES_ADVENTURE:SALES_ADVENTURE_DIMDATE_DIMDATE_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="DATEKEY"/>
+    </xsd:keyref>
+    <xsd:keyref name="FACTINTERNETSALES_DIMDATE_FK" refer="SALES_ADVENTURE:SALES_ADVENTURE_DIMDATE_DIMDATE_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="DATEKEY"/>
+    </xsd:keyref>
+  </xsd:element>
+  <xsd:complexType name="FACTRESELLERSALES">
+    <xsd:sequence>
+      <xsd:element name="CURRENCYKEY" type="xsd:integer"/>
+      <xsd:element name="SALESORDERNUMBER">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SALESORDERLINENUMBER" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="REVISIONNUMBER" type="xsd:integer"/>
+      <xsd:element minOccurs="0" name="ORDERQUANTITY" type="xsd:short"/>
+      <xsd:element minOccurs="0" name="UNITPRICE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="EXTENDEDAMOUNT">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="UNITPRICEDISCOUNTPCT" type="xsd:double"/>
+      <xsd:element minOccurs="0" name="DISCOUNTAMOUNT" type="xsd:double"/>
+      <xsd:element minOccurs="0" name="PRODUCTSTANDARDCOST">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="TOTALPRODUCTCOST">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SALESAMOUNT">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="TAXAMT">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="FREIGHT">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="5"/>
+            <xsd:fractionDigits value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CARRIERTRACKINGNUMBER">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="25"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CUSTOMERPONUMBER">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="25"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ORDERDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="DUEDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="SHIPDATE" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="Attribute1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:length value="5"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMDATE" type="SALES_ADVENTURE:DIMDATE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTRESELLERSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMDATE_1" type="SALES_ADVENTURE:DIMDATE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTRESELLERSALES_1</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMDATE_1_2" type="SALES_ADVENTURE:DIMDATE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTRESELLERSALES_2</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMEMPLOYEE" type="SALES_ADVENTURE:DIMEMPLOYEE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTRESELLERSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMPRODUCT" type="SALES_ADVENTURE:DIMPRODUCT">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTRESELLERSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMPROMOTION" type="SALES_ADVENTURE:DIMPROMOTION">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTRESELLERSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMRESELLER" type="SALES_ADVENTURE:DIMRESELLER">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTRESELLERSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="_DIMSALESTERRITORY" type="SALES_ADVENTURE:DIMSALESTERRITORY">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <inverseOf>_FACTRESELLERSALES</inverseOf>
+            <relationshipEnd>child</relationshipEnd>
+          </xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="FACTRESELLERSALES" type="SALES_ADVENTURE:FACTRESELLERSALES">
+    <xsd:key name="SALES_ADVENTURE_FACTRESELLERSALES_FACTRESELLERSALES_PK">
+      <xsd:selector xpath="."/>
+      <xsd:field xpath="SALESORDERNUMBER"/>
+      <xsd:field xpath="SALESORDERLINENUMBER"/>
+    </xsd:key>
+  </xsd:element>
+</xsd:schema>

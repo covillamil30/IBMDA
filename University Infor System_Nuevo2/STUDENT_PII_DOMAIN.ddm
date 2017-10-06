@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/data/1.9.0.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:LogicalDataModel="http:///com/ibm/db/models/logical/logical.ecore">
+  <LogicalDataModel:Package xmi:id="_bevkEKXhEee7SLkm8_BSqg" name="STUDENT_PII_ROOT" targetNamespace="STUDENT_PII_DOMAIN.ddm" namespaceSupported="true" contents="_sVYxEKXhEee7SLkm8_BSqg _IaNGsKXiEee7SLkm8_BSqg _UFvrUKXjEee7SLkm8_BSqg _gdjVgKXjEee7SLkm8_BSqg"/>
+  <LogicalDataModel:AtomicDomain xmi:id="_sVYxEKXhEee7SLkm8_BSqg" name="SSN" package="_bevkEKXhEee7SLkm8_BSqg" namespace="STUDENT_PII_DOMAIN.ddm/STUDENT_PII_ROOT" baseType="CHAR(11)">
+    <privacyData xmi:id="_61MCgKXhEee7SLkm8_BSqg" classification="http://www.ibm.com/nex/classification/pii" enforcement="http://www.ibm.com/nex/enforcement/required" policyTypeId="http://www.ibm.com/nex/policytype/ssn" policyId="http://www.ibm.com/nex/policy/randomssn"/>
+  </LogicalDataModel:AtomicDomain>
+  <LogicalDataModel:AtomicDomain xmi:id="_IaNGsKXiEee7SLkm8_BSqg" name="STUDENT ID" package="_bevkEKXhEee7SLkm8_BSqg" namespace="STUDENT_PII_DOMAIN.ddm/STUDENT_PII_ROOT" baseType="CHAR(10)">
+    <privacyData xmi:id="_Myhx0KXiEee7SLkm8_BSqg" classification="http://www.ibm.com/nex/classification/pii" enforcement="http://www.ibm.com/nex/enforcement/required" policyTypeId="http://www.ibm.com/nex/policytype/shuffle" policyId="http://www.ibm.com/nex/policy/shuffle"/>
+  </LogicalDataModel:AtomicDomain>
+  <LogicalDataModel:AtomicDomain xmi:id="_UFvrUKXjEee7SLkm8_BSqg" name="EMAIL" package="_bevkEKXhEee7SLkm8_BSqg" namespace="STUDENT_PII_DOMAIN.ddm/STUDENT_PII_ROOT" baseType="VARCHAR(128)">
+    <privacyData xmi:id="_aKMhEKXjEee7SLkm8_BSqg" classification="http://www.ibm.com/nex/classification/pii" enforcement="http://www.ibm.com/nex/enforcement/required" policyTypeId="http://www.ibm.com/nex/policytype/email" policyId="http://www.ibm.com/nex/policy/randomemail"/>
+  </LogicalDataModel:AtomicDomain>
+  <LogicalDataModel:AtomicDomain xmi:id="_gdjVgKXjEee7SLkm8_BSqg" name="LAST NAME" package="_bevkEKXhEee7SLkm8_BSqg" namespace="STUDENT_PII_DOMAIN.ddm/STUDENT_PII_ROOT" baseType="VARCHAR(128)">
+    <privacyData xmi:id="_lXC0AKXjEee7SLkm8_BSqg" classification="http://www.ibm.com/nex/classification/pii" enforcement="http://www.ibm.com/nex/enforcement/bestpractice" policyTypeId="http://www.ibm.com/nex/policytype/shuffle" policyId="http://www.ibm.com/nex/policy/shuffle"/>
+  </LogicalDataModel:AtomicDomain>
+</xmi:XMI>
